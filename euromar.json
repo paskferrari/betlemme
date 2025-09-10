@@ -1,0 +1,1300 @@
+{
+  "data": {
+    "pec": "GIORGIO.MALATERRA@PEC.CNSD.IT",
+    "managers": [
+      {
+        "name": "GIORGIO MARCO",
+        "surname": "MALATERRA",
+        "roles": [
+          {
+            "role": {
+              "code": "PCA",
+              "description": "Chairman of board of directors"
+            },
+            "roleStartDate": "2012-07-16T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "MLTGGM50L22F205T",
+        "birthDate": "1950-07-22T00:00:00",
+        "age": 75,
+        "birthTown": "MILANO (MI)",
+        "isLegalRepresentative": true
+      },
+      {
+        "name": "PATRIZIA",
+        "surname": "LAMERA",
+        "roles": [
+          {
+            "role": {
+              "code": "VPA",
+              "description": "Vice chairman board of directors"
+            },
+            "roleStartDate": "2012-07-16T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "F",
+          "description": "Woman"
+        },
+        "taxCode": "LMRPRZ51R63E987B",
+        "birthDate": "1951-10-23T00:00:00",
+        "age": 73,
+        "birthTown": "MARTINENGO (BG)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "MICHELE",
+        "surname": "GASPARINI",
+        "roles": [
+          {
+            "role": {
+              "code": "RC",
+              "description": "Auditor"
+            },
+            "roleStartDate": "2023-06-28T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "GSPMHL69D01A794M",
+        "birthDate": "1969-04-01T00:00:00",
+        "age": 56,
+        "birthTown": "BERGAMO (BG)",
+        "isLegalRepresentative": false
+      }
+    ],
+    "shareholders": [
+      {
+        "shareholdersInformation": [
+          {
+            "taxCode": "MLTGGM50L22F205T",
+            "name": "GIORGIO MARCO",
+            "surname": "MALATERRA",
+            "streetName": "VIA MILANO 9",
+            "zipCode": "24128",
+            "town": "BERGAMO"
+          }
+        ],
+        "percentShare": 34
+      },
+      {
+        "shareholdersInformation": [
+          {
+            "taxCode": "LMRPRZ51R63E987B",
+            "name": "PATRIZIA",
+            "surname": "LAMERA",
+            "streetName": "VIA MILANO 9",
+            "zipCode": "24128",
+            "town": "BERGAMO"
+          }
+        ],
+        "percentShare": 33
+      },
+      {
+        "shareholdersInformation": [
+          {
+            "taxCode": "MLTJPG84L03F205O",
+            "name": "JACOPO GUIDO",
+            "surname": "MALATERRA",
+            "streetName": "VIALE UMBRIA 98",
+            "zipCode": "20135",
+            "town": "MILANO"
+          }
+        ],
+        "percentShare": 33
+      }
+    ],
+    "rae": {
+      "code": "772",
+      "description": "SERVIZI DEGLI INTERMEDIARI DEI TRASPORTI"
+    },
+    "sae": {
+      "code": "430",
+      "description": "Imprese produttive"
+    },
+    "adjustments": [
+      {
+        "code": "IIC163",
+        "value": 0
+      },
+      {
+        "code": "IIC162",
+        "value": 0
+      },
+      {
+        "code": "IIC164",
+        "value": 0
+      },
+      {
+        "code": "IIC246",
+        "value": 0
+      },
+      {
+        "code": "IIC245",
+        "value": 0
+      },
+      {
+        "code": "IIC350",
+        "value": 0
+      },
+      {
+        "code": "IICC351",
+        "value": 0
+      },
+      {
+        "code": "IIC167",
+        "value": 0
+      },
+      {
+        "code": "IIC168",
+        "value": 0
+      },
+      {
+        "code": "IIC166",
+        "value": 0
+      },
+      {
+        "code": "IIC165",
+        "value": 0
+      },
+      {
+        "code": "IIC169",
+        "value": 0
+      }
+    ],
+    "productionCosts": [
+      {
+        "code": "IIC134",
+        "value": 264759
+      },
+      {
+        "code": "IIC188",
+        "value": 5734
+      },
+      {
+        "code": "IIC140",
+        "value": 2130
+      },
+      {
+        "code": "IIC141",
+        "value": 3604
+      },
+      {
+        "code": "IIC142",
+        "value": 0
+      },
+      {
+        "code": "IIC143",
+        "value": 0
+      },
+      {
+        "code": "IIC133",
+        "value": 176023
+      },
+      {
+        "code": "IIC138",
+        "value": 0
+      },
+      {
+        "code": "IIC148",
+        "value": 93671
+      },
+      {
+        "code": "IIC147",
+        "value": 0
+      },
+      {
+        "code": "IIC137",
+        "value": 0
+      },
+      {
+        "code": "IIC131",
+        "value": 2411
+      },
+      {
+        "code": "IIC146",
+        "value": 0
+      },
+      {
+        "code": "IIC132",
+        "value": 2578884
+      },
+      {
+        "code": "IIC136",
+        "value": 20152
+      },
+      {
+        "code": "IIC187",
+        "value": 20152
+      },
+      {
+        "code": "IIC135",
+        "value": 85577
+      },
+      {
+        "code": "IIC144",
+        "value": 5734
+      },
+      {
+        "code": "IIC139",
+        "value": 370488
+      },
+      {
+        "code": "IIC145",
+        "value": 0
+      }
+    ],
+    "revenuesFinancialCharges": [
+      {
+        "code": "IIC226",
+        "value": 0
+      },
+      {
+        "code": "IPL231",
+        "value": 0
+      },
+      {
+        "code": "IIC236",
+        "value": 0
+      },
+      {
+        "code": "IIC227",
+        "value": 0
+      },
+      {
+        "code": "IPL232",
+        "value": 0
+      },
+      {
+        "code": "IIC237",
+        "value": 0
+      },
+      {
+        "code": "IIC225",
+        "value": 0
+      },
+      {
+        "code": "IIC230",
+        "value": 0
+      },
+      {
+        "code": "IIC235",
+        "value": 0
+      },
+      {
+        "code": "IIC228",
+        "value": 0
+      },
+      {
+        "code": "IIC233",
+        "value": 0
+      },
+      {
+        "code": "IIC238",
+        "value": 0
+      },
+      {
+        "code": "IIC229",
+        "value": 0
+      },
+      {
+        "code": "IIC234",
+        "value": 1695
+      },
+      {
+        "code": "IIC239",
+        "value": 0
+      },
+      {
+        "code": "IIC156",
+        "value": 0
+      },
+      {
+        "code": "IIC190",
+        "value": -19592
+      },
+      {
+        "code": "IIC152",
+        "value": 1695
+      },
+      {
+        "code": "IIC155",
+        "value": 0
+      },
+      {
+        "code": "IIC154",
+        "value": 0
+      },
+      {
+        "code": "IIC150",
+        "value": 0
+      },
+      {
+        "code": "IIC189",
+        "value": 0
+      },
+      {
+        "code": "IIC241",
+        "value": 0
+      },
+      {
+        "code": "IIC243",
+        "value": 0
+      },
+      {
+        "code": "IIC244",
+        "value": 35408
+      },
+      {
+        "code": "IIC242",
+        "value": 0
+      },
+      {
+        "code": "IIC240",
+        "value": 0
+      },
+      {
+        "code": "IIC159",
+        "value": 35408
+      },
+      {
+        "code": "IIC158",
+        "value": 1695
+      }
+    ],
+    "annualResult": [
+      {
+        "code": "IIC191",
+        "value": 13293
+      },
+      {
+        "code": "IIC192",
+        "value": 1846
+      },
+      {
+        "code": "IIC250",
+        "value": 0
+      },
+      {
+        "code": "IIC179",
+        "value": 1322
+      },
+      {
+        "code": "IIC177",
+        "value": 16461
+      },
+      {
+        "code": "IIC347",
+        "value": 0
+      },
+      {
+        "code": "IIC178",
+        "value": 15139
+      }
+    ],
+    "incomeStatementAggregateValues": [
+      {
+        "code": "IIC224",
+        "value": 69766
+      },
+      {
+        "code": "IIC149",
+        "value": 3227211
+      },
+      {
+        "code": "IIC130",
+        "value": 3296977
+      },
+      {
+        "code": "IIC161",
+        "value": -53305
+      },
+      {
+        "code": "IIC170",
+        "value": 0
+      }
+    ],
+    "productionValue": [
+      {
+        "code": "IIC127",
+        "value": 0
+      },
+      {
+        "code": "IIC129",
+        "value": 0
+      },
+      {
+        "code": "IIC223",
+        "value": 115941
+      },
+      {
+        "code": "IIC125",
+        "value": 0
+      },
+      {
+        "code": "IIC124",
+        "value": 3181036
+      },
+      {
+        "code": "IIC128",
+        "value": 115941
+      },
+      {
+        "code": "IIC186",
+        "value": 0
+      },
+      {
+        "code": "IIC126",
+        "value": 0
+      }
+    ],
+    "assetsAggregateValues": [
+      {
+        "code": "IIC072",
+        "value": 88489
+      },
+      {
+        "code": "IIC001",
+        "value": 0
+      },
+      {
+        "code": "IIC071",
+        "value": 335834
+      },
+      {
+        "code": "IIC074",
+        "value": 2226910
+      },
+      {
+        "code": "IIC039",
+        "value": 1802587
+      }
+    ],
+    "intangibleFixedAssets": [
+      {
+        "code": "IIC011",
+        "value": 5422
+      }
+    ],
+    "tangibleFixedAssets": [
+      {
+        "code": "IIC018",
+        "value": 1796365
+      }
+    ],
+    "cashEquivalents": [
+      {
+        "code": "IIC067",
+        "value": 99084
+      },
+      {
+        "code": "IIC070",
+        "value": 100250
+      },
+      {
+        "code": "IIC069",
+        "value": 1166
+      },
+      {
+        "code": "IIC068",
+        "value": 0
+      }
+    ],
+    "credits": [
+      {
+        "code": "IIC057",
+        "value": 0
+      },
+      {
+        "code": "IIC052",
+        "value": 0
+      },
+      {
+        "code": "IIC053",
+        "value": 0
+      },
+      {
+        "code": "IIC046",
+        "value": 189110
+      },
+      {
+        "code": "IIC047",
+        "value": 0
+      },
+      {
+        "code": "IIC054",
+        "value": 1316
+      },
+      {
+        "code": "IIC055",
+        "value": 0
+      },
+      {
+        "code": "IIC050",
+        "value": 0
+      },
+      {
+        "code": "IIC051",
+        "value": 0
+      },
+      {
+        "code": "IIC048",
+        "value": 0
+      },
+      {
+        "code": "IIC049",
+        "value": 0
+      },
+      {
+        "code": "IIC198",
+        "value": 0
+      },
+      {
+        "code": "IIC199",
+        "value": 0
+      },
+      {
+        "code": "IIC056",
+        "value": 235584
+      },
+      {
+        "code": "IIC180",
+        "value": 45158
+      },
+      {
+        "code": "IIC181",
+        "value": 0
+      },
+      {
+        "code": "IIC324",
+        "value": 0
+      },
+      {
+        "code": "IIC321",
+        "value": 189110
+      },
+      {
+        "code": "IIC058",
+        "value": 235584
+      },
+      {
+        "code": "IIC325",
+        "value": 0
+      },
+      {
+        "code": "IIC326",
+        "value": 45158
+      },
+      {
+        "code": "IIC328",
+        "value": 1316
+      },
+      {
+        "code": "IIC323",
+        "value": 0
+      },
+      {
+        "code": "IIC322",
+        "value": 0
+      },
+      {
+        "code": "IIC327",
+        "value": 0
+      }
+    ],
+    "financialFixedAssets": [
+      {
+        "code": "IIC038",
+        "value": 800
+      }
+    ],
+    "creditsToShareholders": [
+      {
+        "code": "IIC002",
+        "value": 0
+      },
+      {
+        "code": "IIC193",
+        "value": 0
+      }
+    ],
+    "financialAssets": [
+      {
+        "code": "IIC201",
+        "value": 0
+      },
+      {
+        "code": "IIC202",
+        "value": 0
+      },
+      {
+        "code": "IIC200",
+        "value": 0
+      },
+      {
+        "code": "IIC062",
+        "value": 0
+      },
+      {
+        "code": "IIC065",
+        "value": 0
+      },
+      {
+        "code": "IIC060",
+        "value": 0
+      },
+      {
+        "code": "IIC059",
+        "value": 0
+      },
+      {
+        "code": "IIC061",
+        "value": 0
+      },
+      {
+        "code": "IIC066",
+        "value": 0
+      }
+    ],
+    "inventory": [
+      {
+        "code": "IIC043",
+        "value": 0
+      },
+      {
+        "code": "IIC044",
+        "value": 0
+      },
+      {
+        "code": "IIC040",
+        "value": 0
+      },
+      {
+        "code": "IIC041",
+        "value": 0
+      },
+      {
+        "code": "IIC349",
+        "value": 0
+      },
+      {
+        "code": "IIC045",
+        "value": 0
+      },
+      {
+        "code": "IIC042",
+        "value": 0
+      }
+    ],
+    "debts": [
+      {
+        "code": "IIC099",
+        "value": 0
+      },
+      {
+        "code": "IIC098",
+        "value": 68031
+      },
+      {
+        "code": "IIC091",
+        "value": 0
+      },
+      {
+        "code": "IIC090",
+        "value": 0
+      },
+      {
+        "code": "IIC092",
+        "value": 0
+      },
+      {
+        "code": "IIC093",
+        "value": 0
+      },
+      {
+        "code": "IIC103",
+        "value": 0
+      },
+      {
+        "code": "IIC102",
+        "value": 0
+      },
+      {
+        "code": "IIC117",
+        "value": 512699
+      },
+      {
+        "code": "IIC097",
+        "value": 0
+      },
+      {
+        "code": "IIC107",
+        "value": 0
+      },
+      {
+        "code": "IIC112",
+        "value": 18548
+      },
+      {
+        "code": "IIC113",
+        "value": 0
+      },
+      {
+        "code": "IIC109",
+        "value": 0
+      },
+      {
+        "code": "IIC105",
+        "value": 0
+      },
+      {
+        "code": "IIC220",
+        "value": 0
+      },
+      {
+        "code": "IIC221",
+        "value": 0
+      },
+      {
+        "code": "IIC106",
+        "value": 0
+      },
+      {
+        "code": "IIC094",
+        "value": 177419
+      },
+      {
+        "code": "IIC095",
+        "value": 213725
+      },
+      {
+        "code": "IIC096",
+        "value": 0
+      },
+      {
+        "code": "IIC108",
+        "value": 0
+      },
+      {
+        "code": "IIC185",
+        "value": 156500
+      },
+      {
+        "code": "IIC184",
+        "value": 0
+      },
+      {
+        "code": "IIC104",
+        "value": 0
+      },
+      {
+        "code": "IIC101",
+        "value": 0
+      },
+      {
+        "code": "IIC100",
+        "value": 684259
+      },
+      {
+        "code": "IIC114",
+        "value": 59742
+      },
+      {
+        "code": "IIC115",
+        "value": 0
+      },
+      {
+        "code": "IIC116",
+        "value": 1043909
+      },
+      {
+        "code": "IIC110",
+        "value": 35910
+      },
+      {
+        "code": "IIC111",
+        "value": 142474
+      },
+      {
+        "code": "IIC334",
+        "value": 68031
+      },
+      {
+        "code": "IIC329",
+        "value": 0
+      },
+      {
+        "code": "IIC333",
+        "value": 0
+      },
+      {
+        "code": "IIC338",
+        "value": 0
+      },
+      {
+        "code": "IIC337",
+        "value": 0
+      },
+      {
+        "code": "IIC330",
+        "value": 0
+      },
+      {
+        "code": "IIC336",
+        "value": 0
+      },
+      {
+        "code": "IIC342",
+        "value": 18548
+      },
+      {
+        "code": "IIC340",
+        "value": 0
+      },
+      {
+        "code": "IIC339",
+        "value": 0
+      },
+      {
+        "code": "IIC331",
+        "value": 156500
+      },
+      {
+        "code": "IIC332",
+        "value": 391144
+      },
+      {
+        "code": "IIC343",
+        "value": 59742
+      },
+      {
+        "code": "IIC341",
+        "value": 178384
+      },
+      {
+        "code": "IIC335",
+        "value": 684259
+      }
+    ],
+    "liabilitiesAggregateValues": [
+      {
+        "code": "IIC119",
+        "value": 212
+      },
+      {
+        "code": "IIC089",
+        "value": 183367
+      },
+      {
+        "code": "IIC118",
+        "value": 1556608
+      },
+      {
+        "code": "IIC121",
+        "value": 2226910
+      },
+      {
+        "code": "IIC084",
+        "value": 486723
+      },
+      {
+        "code": "IIC088",
+        "value": 0
+      }
+    ],
+    "netWorth": [
+      {
+        "code": "IIC211",
+        "value": 0
+      },
+      {
+        "code": "IIC207",
+        "value": 40000
+      },
+      {
+        "code": "IIC209",
+        "value": 0
+      },
+      {
+        "code": "IIC210",
+        "value": 0
+      },
+      {
+        "code": "IIC208",
+        "value": 0
+      },
+      {
+        "code": "IIC203",
+        "value": 187639
+      },
+      {
+        "code": "IIC206",
+        "value": 0
+      },
+      {
+        "code": "IIC078",
+        "value": 11484
+      },
+      {
+        "code": "IIC212",
+        "value": 0
+      },
+      {
+        "code": "IIC216",
+        "value": 0
+      },
+      {
+        "code": "IIC214",
+        "value": 146278
+      },
+      {
+        "code": "IIC218",
+        "value": 0
+      },
+      {
+        "code": "IIC081",
+        "value": 373917
+      },
+      {
+        "code": "IIC082",
+        "value": 0
+      },
+      {
+        "code": "IIC083",
+        "value": 1322
+      },
+      {
+        "code": "IIC345",
+        "value": 0
+      },
+      {
+        "code": "IIC204",
+        "value": 0
+      },
+      {
+        "code": "IIC213",
+        "value": 0
+      },
+      {
+        "code": "IIC215",
+        "value": 0
+      },
+      {
+        "code": "IIC077",
+        "value": 0
+      },
+      {
+        "code": "IIC075",
+        "value": 100000
+      },
+      {
+        "code": "IIC076",
+        "value": 0
+      },
+      {
+        "code": "IIC205",
+        "value": 0
+      },
+      {
+        "code": "IIC080",
+        "value": 0
+      }
+    ],
+    "riskProvisions": [
+      {
+        "code": "IIC087",
+        "value": 0
+      },
+      {
+        "code": "IIC219",
+        "value": 0
+      },
+      {
+        "code": "IIC085",
+        "value": 0
+      },
+      {
+        "code": "IIC086",
+        "value": 0
+      }
+    ],
+    "companyDetails": {
+      "vatCode": "04475990158",
+      "taxCode": "04475990158",
+      "lastUpdateDate": "2025-08-19T16:40:27.6854874Z",
+      "cciaa": "MI",
+      "reaCode": "1009753",
+      "companyName": "EUROMAR G.M. SRL",
+      "officeType": {
+        "code": "SSL",
+        "description": "Administrative headquarter and registered office"
+      },
+      "openapiNumber": "IT9F04040FS0001"
+    },
+    "legalForm": {
+      "legalForm": {
+        "code": "SC",
+        "description": "Joint stock business"
+      },
+      "detailedLegalForm": {
+        "code": "SR",
+        "description": "Limited liability company/ limited company"
+      }
+    },
+    "companyStatus": {
+      "activityStatus": {
+        "code": "A",
+        "description": "Enable"
+      }
+    },
+    "companyDates": {
+      "registrationDate": "1996-02-19T00:00:00",
+      "startDate": "1979-05-04T00:00:00",
+      "incorporationDate": "2010-10-28T00:00:00"
+    },
+    "address": {
+      "streetName": "VIA LISIADE PEDRONI, 17/21",
+      "zipCode": "20161",
+      "town": "MILANO",
+      "province": {
+        "code": "MI",
+        "description": "MILANO"
+      },
+      "region": {
+        "code": "03",
+        "description": "LOMBARDY"
+      },
+      "country": {
+        "code": "IT",
+        "description": "Italia"
+      }
+    },
+    "marketable": {
+      "isMarketable": true
+    },
+    "branches": {
+      "numberOfBranches": 0
+    },
+    "atecoClassification": {
+      "ateco": {
+        "code": "5226",
+        "description": "Other support activities for transportation"
+      },
+      "secondaryAteco": "4941",
+      "ateco2022": {
+        "code": "52291",
+        "description": "Couriers and customs agencies"
+      },
+      "secondaryAteco2022": "4941"
+    },
+    "internationalClassification": {
+      "nace": {
+        "code": "5229",
+        "description": "Other transportation support activities"
+      },
+      "primarySic": {
+        "code": "4723",
+        "description": "Freight & cargo transport agents/brokers"
+      },
+      "secondarySic": "4212"
+    },
+    "ecofin": {
+      "balanceSheetDate": "2024-12-31T00:00:00",
+      "turnoverRange": {
+        "code": "TR7",
+        "description": "1000000 - 4999999"
+      },
+      "turnoverYear": 2024,
+      "turnover": 3181036,
+      "turnoverTrend": 4.16,
+      "shareCapital": 100000,
+      "netWorth": 486723,
+      "enterpriseSize": {
+        "code": "SMALL",
+        "description": "Small enterprise"
+      }
+    },
+    "employees": {
+      "employeeRange": {
+        "code": "ER3",
+        "description": "6 - 10"
+      },
+      "employee": 7,
+      "employeeTrend": 0
+    },
+    "employeesStatistic": {
+      "permanentContract": 100,
+      "partialTimeContract": 25,
+      "fullTimeContract": 75,
+      "whiteCollar": 100
+    },
+    "innovativeSmeAndSu": {
+      "isInnovativeStartUp": false,
+      "isInnovativeSme": false
+    },
+    "mail": {
+      "email": "euromar@gmeuromar.it"
+    },
+    "contacts": {
+      "telephoneNumber": "026621631",
+      "fax": "0266220401"
+    },
+    "webAndSocial": {
+      "website": "www.gmeuromar.it",
+      "hasSocial": false
+    },
+    "foreignTrade": {
+      "isImporter": false,
+      "isExporter": true,
+      "exportCountries": "UNIONE EUROPEA, ALTRI PAESI"
+    },
+    "corporateGroups": {
+      "belongsToGroup": false,
+      "nationalParentCompany": {
+        "province": {
+          "code": "ND99",
+          "description": "N. A."
+        }
+      },
+      "hasForeignSubsidiaries": false,
+      "hasForeignParents": false
+    },
+    "artisanBusinessRegistry": {
+      "belongsToArtisanBusinessRegistry": false
+    },
+    "soaCertification": {
+      "hasSoaCertification": false
+    },
+    "financialCycle": {
+      "accountsReceivableDuration": 20.9359,
+      "stockDuration": 0,
+      "debtsToSuppliersDuration": 90.5788,
+      "financialCycleDuration": -69.6429
+    },
+    "coverageRatios": {
+      "ebitdaNetInterestCoverage": 2.2395,
+      "ebitNetInterestCoverage": 2.0694,
+      "ebitdaGrossInterestCoverage": 2.1323,
+      "ebitGrossInterestCoverage": 1.9704
+    },
+    "efficiency": {
+      "turnoverIndex": 1.4805,
+      "currentAssetsRotation": 7.77,
+      "accountsReceivableRotation": 17.4342
+    },
+    "leverageRatios": {
+      "pfnEbitda": 5.9258,
+      "ebitdaNetLeverage": 5.9258,
+      "ebitdaGrossLeverage": 7.2536
+    },
+    "liquidityRatios": {
+      "cashShortTermFinancialDebt": 0.5651,
+      "cashShortTermBankDebt": 0.5651,
+      "cashTotalShortTermDebt": 0.096
+    },
+    "profitability": {
+      "ros": 2.12,
+      "roe": 0.27,
+      "incidenceOfExtraFeaturesManagement": 1.9,
+      "roi": 3.13,
+      "roaMonetary": 0.32
+    },
+    "financialBurden": {
+      "rod": 2.28,
+      "rodFinanziario": 9.05,
+      "burdenIndex": 46.9
+    },
+    "indebtedness": {
+      "bankDebtTotalAssets": 0.1756,
+      "capitalizationDegree": 0.2186,
+      "leverage": 4.5753,
+      "bankDebtRatio": 0.8036,
+      "debtRatio": 3.1981
+    },
+    "financialStability": {
+      "secondaryMarginStructure ": -803165,
+      "marginStructure": 0.27,
+      "fixedAssetsCoverageRate": 0.5544,
+      "marginStructureIndex": -1315864,
+      "workingCapitalCoverage": -0.188,
+      "acidTest": 0.4064,
+      "currentRatio": 0.4064
+    },
+    "structureRatios": {
+      "netFinancialDebtEquityNetWorth": 0.9192,
+      "pfnNetWorth": 0.9192,
+      "financialDebtComposition": 0.324,
+      "netDebtTotalSources": 0.479,
+      "grossFinancialDebtNetWorth": 1.1252
+    },
+    "development": {
+      "ebitVariation": 4.6477,
+      "grossFinancialDebt": 0.7139,
+      "totalAssets": -10.28,
+      "mol": 297.62,
+      "addedValue": 11.52,
+      "productionValue": -2.75
+    },
+    "operatingResults": {
+      "ebitda": 75500,
+      "ebitdaL2Y": 18988,
+      "ebit": 69766,
+      "ebitL2Y": 12353,
+      "cashFlow": 7056,
+      "cashFlowL2Y": -23939
+    },
+    "financialStatementKpi": {
+      "totalInventoryTurnover": 0,
+      "debtsTurnover": 0.4893
+    },
+    "allOffices": [
+      {
+        "companyDetails": {
+          "vatCode": "04475990158",
+          "taxCode": "04475990158",
+          "lastUpdateDate": "2025-08-19T16:40:27.6854874Z",
+          "cciaa": "MI",
+          "reaCode": "1009753",
+          "companyName": "EUROMAR G.M. SRL",
+          "officeType": {
+            "code": "SSL",
+            "description": "Administrative headquarter and registered office"
+          },
+          "openapiNumber": "IT9F04040FS0001"
+        },
+        "companyStatus": {
+          "activityStatus": {
+            "code": "A",
+            "description": "Enable"
+          }
+        },
+        "address": {
+          "streetName": "VIA LISIADE PEDRONI, 17/21",
+          "zipCode": "20161",
+          "town": "MILANO",
+          "province": {
+            "code": "MI",
+            "description": "MILANO"
+          },
+          "region": {
+            "code": "03",
+            "description": "LOMBARDY"
+          },
+          "country": {
+            "code": "IT",
+            "description": "Italia"
+          }
+        }
+      }
+    ]
+  },
+  "success": true,
+  "message": "",
+  "error": null
+}
