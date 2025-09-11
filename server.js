@@ -32,6 +32,59 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'report.html'));
 });
 
+// Endpoint di test per debug
+app.get('/test', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Test Server</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .success { background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; }
+            .info { background: #d1ecf1; color: #0c5460; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        </style>
+    </head>
+    <body>
+        <h1>🧪 Test Server - Debug</h1>
+        <div class="success">
+            <h3>✅ Server funzionante!</h3>
+            <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+            <p><strong>Porta:</strong> ${PORT}</p>
+        </div>
+        
+        <div class="info">
+            <h3>🔗 Link di test:</h3>
+            <ul>
+                <li><a href="/">Report principale</a></li>
+                <li><a href="/test-report.html">Report di test</a></li>
+                <li><a href="/api/report">API Report (JSON)</a></li>
+            </ul>
+        </div>
+        
+        <script>
+            console.log('✅ Test page caricata correttamente');
+            
+            // Test API
+            fetch('/api/report')
+                .then(response => {
+                    console.log('📡 API Response Status:', response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('📊 API Data:', data);
+                    document.body.innerHTML += '<div class="success"><h3>✅ API funzionante!</h3><p>Controlla la console per i dati.</p></div>';
+                })
+                .catch(error => {
+                    console.error('❌ API Error:', error);
+                    document.body.innerHTML += '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin: 10px 0;"><h3>❌ Errore API!</h3><p>' + error.message + '</p></div>';
+                });
+        </script>
+    </body>
+    </html>
+  `);
+})
+
 // API endpoint per recuperare tutti i dati
 app.get('/api/report', async (req, res) => {
   try {
@@ -73,12 +126,30 @@ app.get('/api/report', async (req, res) => {
       data.ateco = atecoResult.rows;
       
       // Recupera dati di bilancio
+      // Recupera dati di bilancio
       const balanceResult = await pgClient.query(`
         SELECT * FROM public.balance_entries 
         WHERE azienda_id = $1 
         ORDER BY year DESC, statement, code
       `, [azienda_id]);
-      data.balance_entries = balanceResult.rows;
+      
+      // Se non ci sono dati per questa azienda, cerca la prima azienda con dati di bilancio
+      if (balanceResult.rows.length === 0) {
+        const alternativeBalanceResult = await pgClient.query(`
+          SELECT DISTINCT azienda_id FROM public.balance_entries LIMIT 1
+        `);
+        if (alternativeBalanceResult.rows.length > 0) {
+          const altAziendaId = alternativeBalanceResult.rows[0].azienda_id;
+          const altBalanceResult = await pgClient.query(`
+            SELECT * FROM public.balance_entries 
+            WHERE azienda_id = $1 
+            ORDER BY year DESC, statement, code
+          `, [altAziendaId]);
+          data.balance_entries = altBalanceResult.rows;
+        }
+      } else {
+        data.balance_entries = balanceResult.rows;
+      }
       
       // Recupera versioni azienda
       const versionsResult = await pgClient.query(`

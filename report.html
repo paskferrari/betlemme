@@ -3,427 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Aziendale - Dashboard</title>
+    <title>Report Aziendale - mEG</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            color: #333;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
+            padding: 20px;
         }
-        
+
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
             padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        
+
         .header h1 {
-            font-size: 2.5rem;
+            color: #2c3e50;
+            font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 300;
         }
-        
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
+
         .loading {
             text-align: center;
             padding: 50px;
-            font-size: 1.2rem;
-            color: #666;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .loading h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
+            border-top: 4px solid #667eea;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
-        
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
         .section {
             margin-bottom: 40px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            border-left: 5px solid #3498db;
         }
-        
+
         .section h2 {
             color: #2c3e50;
+            font-size: 1.8em;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
-        .section-icon {
-            width: 30px;
-            height: 30px;
-            background: #3498db;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
+
         .card {
-            background: white;
+            background: #fff;
             border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e9ecef;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
         }
-        
-        .card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
+
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        
+
         .info-item {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
         }
-        
-        .info-item:last-child {
-            border-bottom: none;
-        }
-        
+
         .info-label {
             font-weight: 600;
             color: #555;
         }
-        
+
         .info-value {
-            color: #2c3e50;
-            text-align: right;
+            color: #333;
+            font-weight: 500;
         }
-        
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        
-        .table th,
-        .table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .table th {
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .table tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .amount {
-            font-weight: 600;
-            color: #27ae60;
-        }
-        
-        .amount.negative {
-            color: #e74c3c;
-        }
-        
+
         .badge {
-            display: inline-block;
-            padding: 4px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.85em;
             font-weight: 600;
             text-transform: uppercase;
         }
-        
+
         .badge.success {
             background: #d4edda;
             color: #155724;
         }
-        
-        .badge.info {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        
-        .badge.warning {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
+
         .error {
             background: #f8d7da;
             color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #dc3545;
+        }
+
+        .error h3 {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .debug-info {
+            background: #e3f2fd;
+            color: #0d47a1;
             padding: 15px;
             border-radius: 10px;
             margin: 20px 0;
+            border-left: 5px solid #2196f3;
         }
-        
-        .refresh-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 20px 0;
-            transition: all 0.3s ease;
+
+        .debug-info h4 {
+            margin-bottom: 10px;
         }
-        
-        .refresh-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .balance-filters {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .balance-filters select,
-        .balance-filters input {
-            flex: 1;
-            min-width: 200px;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 0.375rem;
-            font-size: 0.9rem;
-        }
-        
-        .balance-summary-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .balance-summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .summary-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            border-left: 4px solid #007bff;
-        }
-        
-        .summary-item h4 {
-            margin: 0 0 0.5rem 0;
-            color: #495057;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .summary-item .value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #007bff;
-        }
-        
-        .amount-positive {
-            color: #28a745;
-        }
-        
-        .amount-negative {
-            color: #dc3545;
-        }
-        
-        .amount-zero {
-            color: #6c757d;
-        }
-        
-        .no-data {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            padding: 20px;
-        }
-        
-        /* Stili per le schede del bilancio */
-        .balance-tabs {
-            display: flex;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 20px;
-        }
-        
-        .tab-button {
-            background: none;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: #666;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .tab-button:hover {
-            color: #007bff;
-            background-color: #f8f9fa;
-        }
-        
-        .tab-button.active {
-            color: #007bff;
-            border-bottom-color: #007bff;
-            background-color: #f8f9fa;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .tab-content h4 {
-            margin-bottom: 15px;
-            color: #333;
-            font-size: 18px;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-            
-            .header {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            /* Stili responsive per le schede */
-            .balance-tabs {
-                flex-direction: column;
-                border-bottom: none;
-            }
-            
-            .tab-button {
-                border-bottom: 1px solid #e0e0e0;
-                border-left: 3px solid transparent;
-                text-align: left;
-                padding: 15px;
-            }
-            
-            .tab-button.active {
-                border-left-color: #007bff;
-                border-bottom-color: transparent;
-            }
-            
-            .tab-content h4 {
-                font-size: 16px;
-            }
+
+        .debug-info pre {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Dashboard Aziendale</h1>
-            <p>Report completo dei dati aziendali inseriti nel database</p>
+            <h1>📊 Report Aziendale</h1>
+            <p>Sistema di gestione e analisi dati aziendali</p>
         </div>
         
-        <div class="content">
-            <button class="refresh-btn" onclick="loadData()">🔄 Aggiorna Dati</button>
-            
-            <div id="loading" class="loading">
-                <div class="spinner"></div>
-                <p>Caricamento dati in corso...</p>
-            </div>
-            
-            <div id="content" style="display: none;">
-                <!-- I dati verranno caricati qui dinamicamente -->
-            </div>
+        <div id="loading" class="loading">
+            <h2>⏳ Caricamento dati in corso...</h2>
+            <div class="spinner"></div>
+            <p>Attendere mentre recuperiamo i dati dal database</p>
+        </div>
+        
+        <div id="content" class="content" style="display: none;">
+            <!-- Il contenuto verrà inserito qui dal JavaScript -->
         </div>
     </div>
-    
+
     <script>
+        // Variabili globali per debug
+        window.debugMode = true;
+        window.apiData = null;
+        
+        function debugLog(message, data = null) {
+            if (window.debugMode) {
+                console.log(`🐛 [DEBUG] ${message}`, data || '');
+            }
+        }
+        
+        function showError(title, message, details = null) {
+            const content = document.getElementById('content');
+            let errorHtml = `
+                <div class="error">
+                    <h3>${title}</h3>
+                    <p><strong>Errore:</strong> ${message}</p>
+                    <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+                `;
+            
+            if (details) {
+                errorHtml += `
+                    <div class="debug-info">
+                        <h4>🔍 Dettagli tecnici:</h4>
+                        <pre>${JSON.stringify(details, null, 2)}</pre>
+                    </div>
+                `;
+            }
+            
+            errorHtml += `
+                    <p><em>Suggerimenti:</em></p>
+                    <ul>
+                        <li>Verifica che il server sia in esecuzione su <a href="http://localhost:3001" target="_blank">http://localhost:3001</a></li>
+                        <li>Controlla la console del browser per errori aggiuntivi</li>
+                        <li>Prova a ricaricare la pagina (Ctrl+F5)</li>
+                    </ul>
+                </div>
+            `;
+            
+            content.innerHTML = errorHtml;
+        }
+        
         async function loadData() {
             const loading = document.getElementById('loading');
             const content = document.getElementById('content');
             
-            loading.style.display = 'block';
-            content.style.display = 'none';
+            debugLog('Inizio caricamento dati');
             
             try {
-                const response = await fetch('/api/report');
+                // Aggiungi cache busting
+                const timestamp = new Date().getTime();
+                const apiUrl = `/api/report?_t=${timestamp}`;
+                
+                debugLog('Chiamata API', { url: apiUrl });
+                
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
+                debugLog('Risposta ricevuta', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    ok: response.ok
+                });
                 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
                 
                 const data = await response.json();
+                window.apiData = data; // Salva per debug
+                
+                debugLog('Dati JSON ricevuti', {
+                    hasCompany: !!data.company,
+                    hasStats: !!data.stats,
+                    hasBalance: !!data.balance,
+                    balanceCount: data.balance ? data.balance.length : 0
+                });
                 
                 if (data.error) {
                     throw new Error(data.error);
@@ -432,14 +319,16 @@
                 renderReport(data);
                 
             } catch (error) {
-                console.error('Errore nel caricamento dei dati:', error);
-                content.innerHTML = `
-                    <div class="error">
-                        <h3>❌ Errore nel caricamento dei dati</h3>
-                        <p>${error.message}</p>
-                        <p>Assicurati che il server API sia in esecuzione.</p>
-                    </div>
-                `;
+                debugLog('Errore durante il caricamento', error);
+                showError(
+                    '❌ Errore nel caricamento dei dati',
+                    error.message,
+                    {
+                        name: error.name,
+                        stack: error.stack,
+                        timestamp: new Date().toISOString()
+                    }
+                );
             } finally {
                 loading.style.display = 'none';
                 content.style.display = 'block';
@@ -447,15 +336,34 @@
         }
         
         function renderReport(data) {
-            const content = document.getElementById('content');
+            debugLog('Inizio rendering report');
             
+            const content = document.getElementById('content');
             let html = '';
+            
+            // Debug info
+            const balanceData = data.balance || data.balance_entries;
+            if (window.debugMode) {
+                html += `
+                    <div class="debug-info">
+                        <h4>🔍 Informazioni di debug</h4>
+                        <p><strong>Caricamento completato:</strong> ${new Date().toLocaleString()}</p>
+                        <p><strong>Dati ricevuti:</strong> ${Object.keys(data).join(', ')}</p>
+                        <p><strong>Voci bilancio:</strong> ${balanceData ? balanceData.length : 0}</p>
+                        <details>
+                            <summary>Mostra dati completi (JSON)</summary>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        </details>
+                    </div>
+                `;
+            }
             
             // Sezione Azienda
             if (data.company) {
+                debugLog('Rendering sezione azienda');
                 html += `
                     <div class="section">
-                        <h2><span class="section-icon">🏢</span>Informazioni Azienda</h2>
+                        <h2><span>🏢</span>Informazioni Azienda</h2>
                         <div class="card">
                             <div class="info-grid">
                                 <div class="info-item">
@@ -488,497 +396,154 @@
                 `;
             }
             
-            // Sezione Contatti
-            if (data.contacts && data.contacts.length > 0) {
+            // Sezione Statistiche
+            if (data.stats) {
+                debugLog('Rendering sezione statistiche');
                 html += `
                     <div class="section">
-                        <h2><span class="section-icon">📞</span>Contatti</h2>
-                `;
-                
-                data.contacts.forEach(contact => {
-                    html += `
+                        <h2><span>📊</span>Statistiche</h2>
                         <div class="card">
                             <div class="info-grid">
                                 <div class="info-item">
-                                    <span class="info-label">Telefono:</span>
-                                    <span class="info-value">${contact.phone || 'N/A'}</span>
+                                    <span class="info-label">Totale Aziende:</span>
+                                    <span class="info-value">${data.stats.total_companies || 0}</span>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">Email:</span>
-                                    <span class="info-value">${contact.email || 'N/A'}</span>
+                                    <span class="info-label">Totale Voci Bilancio:</span>
+                                    <span class="info-value">${data.stats.total_balance_entries || 0}</span>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">PEC:</span>
-                                    <span class="info-value">${contact.pec || 'N/A'}</span>
+                                    <span class="info-label">Totale Contatti:</span>
+                                    <span class="info-value">${data.stats.total_contacts || 0}</span>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">Sito Web:</span>
-                                    <span class="info-value">${contact.website || 'N/A'}</span>
+                                    <span class="info-label">Totale Indirizzi:</span>
+                                    <span class="info-value">${data.stats.total_addresses || 0}</span>
                                 </div>
                             </div>
-                        </div>
-                    `;
-                });
-                
-                html += `</div>`;
-            }
-            
-            // Sezione Indirizzi
-            if (data.addresses && data.addresses.length > 0) {
-                html += `
-                    <div class="section">
-                        <h2><span class="section-icon">📍</span>Indirizzi</h2>
-                `;
-                
-                data.addresses.forEach(address => {
-                    html += `
-                        <div class="card">
-                            <h3>${address.address_type || 'Indirizzo'}</h3>
-                            <div class="info-grid">
-                                <div class="info-item">
-                                    <span class="info-label">Via:</span>
-                                    <span class="info-value">${address.street || 'N/A'}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">CAP:</span>
-                                    <span class="info-value">${address.zip_code || 'N/A'}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Città:</span>
-                                    <span class="info-value">${address.town || 'N/A'}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Provincia:</span>
-                                    <span class="info-value">${address.province || 'N/A'}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Regione:</span>
-                                    <span class="info-value">${address.region || 'N/A'}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Paese:</span>
-                                    <span class="info-value">${address.country || 'N/A'}</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += `</div>`;
-            }
-            
-            // Sezione ATECO
-            if (data.ateco && data.ateco.length > 0) {
-                html += `
-                    <div class="section">
-                        <h2><span class="section-icon">🏷️</span>Classificazioni ATECO</h2>
-                        <div class="card">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Codice ATECO</th>
-                                        <th>Descrizione</th>
-                                        <th>Tipo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                `;
-                
-                data.ateco.forEach(ateco => {
-                    html += `
-                        <tr>
-                            <td><strong>${ateco.ateco_code}</strong></td>
-                            <td>${ateco.ateco_description || 'N/A'}</td>
-                            <td><span class="badge info">${ateco.raw_json?.type || 'N/A'}</span></td>
-                        </tr>
-                    `;
-                });
-                
-                html += `
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 `;
             }
             
-            // Sezione Bilanci con 3 schede separate
-            if (data.balance_entries && data.balance_entries.length > 0) {
+            // Sezione Bilanci
+            if (balanceData && balanceData.length > 0) {
+                debugLog('Rendering sezione bilanci', { count: balanceData.length });
+                
                 // Raggruppa i dati per statement
-                const balanceByStatement = {
-                    'SP_A': data.balance_entries.filter(entry => entry.statement === 'SP_A'),
-                    'SP_P': data.balance_entries.filter(entry => entry.statement === 'SP_P'),
-                    'CE': data.balance_entries.filter(entry => entry.statement === 'CE')
+                const groupedData = {
+                    'CE': balanceData.filter(entry => entry.statement === 'CE'),
+                    'SP_A': balanceData.filter(entry => entry.statement === 'SP_A'),
+                    'SP_P': balanceData.filter(entry => entry.statement === 'SP_P')
+                };
+                
+                const statementNames = {
+                    'CE': 'Conto Economico',
+                    'SP_A': 'Stato Patrimoniale - Attivo',
+                    'SP_P': 'Stato Patrimoniale - Passivo'
                 };
                 
                 html += `
                     <div class="section">
-                        <h2><span class="section-icon">💰</span>Dati di Bilancio</h2>
-                        <div class="card">
-                            <h3>Riepilogo per Anno e Tipo</h3>
-                            <div id="balance-summary-table"></div>
-                        </div>
-                        
-                        <!-- Tabs per le 3 sezioni -->
-                        <div class="card">
-                            <div class="balance-tabs">
-                                <button class="tab-button active" onclick="showBalanceTab('SP_A')">SP_A - Stato Patrimoniale Attivo</button>
-                                <button class="tab-button" onclick="showBalanceTab('SP_P')">SP_P - Stato Patrimoniale Passivo</button>
-                                <button class="tab-button" onclick="showBalanceTab('CE')">CE - Conto Economico</button>
-                            </div>
+                        <h2><span>💰</span>Voci di Bilancio</h2>
+                        <p><strong>Totale voci:</strong> ${balanceData.length}</p>
                 `;
                 
-                // Crea le 3 schede
-                const statements = [
-                    { code: 'SP_A', title: 'Stato Patrimoniale - Attivo', icon: '📊' },
-                    { code: 'SP_P', title: 'Stato Patrimoniale - Passivo', icon: '📈' },
-                    { code: 'CE', title: 'Conto Economico', icon: '💹' }
-                ];
-                
-                statements.forEach((stmt, index) => {
-                    const entries = balanceByStatement[stmt.code] || [];
-                    const isActive = index === 0 ? 'active' : '';
-                    
-                    html += `
-                        <div id="tab-${stmt.code}" class="tab-content ${isActive}">
-                            <h4><span class="section-icon">${stmt.icon}</span>${stmt.title}</h4>
-                            <div class="balance-filters mb-3">
-                                <input type="text" id="code-filter-${stmt.code}" class="form-control" placeholder="Filtra per codice o descrizione..." onkeyup="filterBalanceTable('${stmt.code}')">
-                            </div>
-                    `;
-                    
+                // Mostra ogni sezione separatamente
+                Object.keys(groupedData).forEach(statementType => {
+                    const entries = groupedData[statementType];
                     if (entries.length > 0) {
                         html += `
-                            <table class="table" id="table-${stmt.code}">
-                                <thead>
-                                    <tr>
-                                        <th>Anno</th>
-                                        <th>Codice</th>
-                                        <th>Descrizione</th>
-                                        <th>Importo</th>
-                                        <th>Valuta</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <div class="card" style="margin-bottom: 20px;">
+                                <h3 style="color: #2c3e50; margin-bottom: 15px;">
+                                    📊 ${statementNames[statementType]} (${entries.length} voci)
+                                </h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Anno</th>
+                                            <th>Codice</th>
+                                            <th>Descrizione</th>
+                                            <th>Importo</th>
+                                            <th>Valuta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                         `;
                         
+                        // Mostra tutte le voci per ogni sezione
                         entries.forEach(entry => {
-                            const amountClass = entry.amount < 0 ? 'amount negative' : 'amount';
-                            const formattedAmount = entry.amount ? new Intl.NumberFormat('it-IT', {
-                                style: 'currency',
-                                currency: entry.currency || 'EUR'
-                            }).format(entry.amount) : 'N/A';
-                            
                             html += `
                                 <tr>
-                                    <td><strong>${entry.year}</strong></td>
-                                    <td><strong>${entry.code}</strong></td>
+                                    <td>${entry.year || 'N/A'}</td>
+                                    <td>${entry.code || 'N/A'}</td>
                                     <td>${entry.description || 'N/A'}</td>
-                                    <td><span class="${amountClass}">${formattedAmount}</span></td>
+                                    <td style="text-align: right; font-weight: bold;">${formatAmount(entry.amount, entry.currency)}</td>
                                     <td>${entry.currency || 'EUR'}</td>
                                 </tr>
                             `;
                         });
                         
                         html += `
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         `;
-                    } else {
-                        html += `<p class="no-data">Nessun dato disponibile per ${stmt.title}</p>`;
                     }
-                    
-                    html += `</div>`;
                 });
                 
                 html += `
-                        </div>
                     </div>
                 `;
-            }
-            
-            // Se non ci sono dati
-            if (!data.company && (!data.contacts || data.contacts.length === 0) && 
-                (!data.addresses || data.addresses.length === 0) && 
-                (!data.ateco || data.ateco.length === 0) && 
-                (!data.balance_entries || data.balance_entries.length === 0)) {
-                html = `
+            } else {
+                html += `
                     <div class="section">
-                        <h2><span class="section-icon">ℹ️</span>Nessun Dato Disponibile</h2>
+                        <h2><span>💰</span>Voci di Bilancio</h2>
                         <div class="card">
-                            <p>Non sono stati trovati dati nel database. Assicurati di aver eseguito l'importazione dei dati.</p>
+                            <p class="no-data">Nessuna voce di bilancio trovata</p>
                         </div>
                     </div>
                 `;
             }
             
             content.innerHTML = html;
-        }
-        
-
-        
-        async function populateBalanceData(balanceEntries) {
-            // Popola il riepilogo
-            await populateBalanceSummary();
-            
-            // Popola la tabella dettagliata
-            const container = document.getElementById('balance-table');
-            
-            if (!balanceEntries || balanceEntries.length === 0) {
-                container.innerHTML = '<p class="no-data">Nessun dato di bilancio disponibile</p>';
-                return;
-            }
-            
-            // Popola i filtri
-            populateFilters(balanceEntries);
-            
-            // Mostra tutti i dati inizialmente
-            displayFilteredBalance(balanceEntries);
-            
-            // Aggiungi event listeners per i filtri
-            setupBalanceFilters(balanceEntries);
-        }
-        
-        async function populateBalanceSummary() {
-            try {
-                const response = await fetch('/api/balance-summary');
-                const summaryData = await response.json();
-                
-                const container = document.getElementById('balance-summary-table');
-                
-                if (!summaryData || summaryData.length === 0) {
-                    container.innerHTML = '<p class="no-data">Nessun riepilogo disponibile</p>';
-                    return;
-                }
-                
-                // Calcola statistiche generali
-                const totalEntries = summaryData.reduce((sum, item) => sum + parseInt(item.entries_count), 0);
-                const totalAmount = summaryData.reduce((sum, item) => sum + parseFloat(item.total_amount || 0), 0);
-                const years = [...new Set(summaryData.map(item => item.year))].sort().reverse();
-                const statements = [...new Set(summaryData.map(item => item.statement))];
-                
-                const summaryHtml = `
-                    <div class="balance-summary-grid">
-                        <div class="summary-item">
-                            <h4>Totale Voci</h4>
-                            <div class="value">${totalEntries}</div>
-                        </div>
-                        <div class="summary-item">
-                            <h4>Anni Disponibili</h4>
-                            <div class="value">${years.length}</div>
-                        </div>
-                        <div class="summary-item">
-                            <h4>Prospetti</h4>
-                            <div class="value">${statements.length}</div>
-                        </div>
-                        <div class="summary-item">
-                            <h4>Importo Totale</h4>
-                            <div class="value ${getAmountClass(totalAmount)}">
-                                ${formatAmount(totalAmount, 'EUR')}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Anno</th>
-                                <th>Prospetto</th>
-                                <th>Voci</th>
-                                <th>Importo Totale</th>
-                                <th>Valuta</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${summaryData.map(item => `
-                                <tr>
-                                    <td><strong>${item.year}</strong></td>
-                                    <td>${item.statement}</td>
-                                    <td><span class="badge bg-primary">${item.entries_count}</span></td>
-                                    <td class="${getAmountClass(item.total_amount)}">
-                                        ${formatAmount(item.total_amount, item.currency)}
-                                    </td>
-                                    <td>${item.currency}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
-                
-                container.innerHTML = summaryHtml;
-                
-            } catch (error) {
-                console.error('Errore nel caricamento del riepilogo bilanci:', error);
-                document.getElementById('balance-summary-table').innerHTML = 
-                    '<p class="no-data">Errore nel caricamento del riepilogo</p>';
-            }
-        }
-        
-        function populateFilters(balanceEntries) {
-            const years = [...new Set(balanceEntries.map(entry => entry.year))].sort().reverse();
-            const statements = [...new Set(balanceEntries.map(entry => entry.statement))].sort();
-            
-            const yearFilter = document.getElementById('year-filter');
-            const statementFilter = document.getElementById('statement-filter');
-            
-            // Popola filtro anni
-            years.forEach(year => {
-                const option = document.createElement('option');
-                option.value = year;
-                option.textContent = year;
-                yearFilter.appendChild(option);
-            });
-            
-            // Popola filtro prospetti
-            statements.forEach(statement => {
-                const option = document.createElement('option');
-                option.value = statement;
-                option.textContent = statement;
-                statementFilter.appendChild(option);
-            });
-        }
-        
-        function setupBalanceFilters(balanceEntries) {
-            const yearFilter = document.getElementById('year-filter');
-            const statementFilter = document.getElementById('statement-filter');
-            const codeFilter = document.getElementById('code-filter');
-            
-            function applyFilters() {
-                let filtered = balanceEntries;
-                
-                if (yearFilter.value) {
-                    filtered = filtered.filter(entry => entry.year == yearFilter.value);
-                }
-                
-                if (statementFilter.value) {
-                    filtered = filtered.filter(entry => entry.statement === statementFilter.value);
-                }
-                
-                if (codeFilter.value) {
-                    const searchTerm = codeFilter.value.toLowerCase();
-                    filtered = filtered.filter(entry => 
-                        (entry.code || '').toLowerCase().includes(searchTerm)
-                    );
-                }
-                
-                displayFilteredBalance(filtered);
-            }
-            
-            yearFilter.addEventListener('change', applyFilters);
-            statementFilter.addEventListener('change', applyFilters);
-            codeFilter.addEventListener('input', applyFilters);
-        }
-        
-        function displayFilteredBalance(entries) {
-            const container = document.getElementById('balance-table');
-            
-            if (entries.length === 0) {
-                container.innerHTML = '<p class="no-data">Nessun dato corrisponde ai filtri selezionati</p>';
-                return;
-            }
-            
-            const table = `
-                <div class="mb-2">
-                    <small class="text-muted">Mostrando ${entries.length} voci di bilancio</small>
-                </div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Anno</th>
-                            <th>Prospetto</th>
-                            <th>Codice</th>
-                            <th>Importo</th>
-                            <th>Valuta</th>
-                            <th>Percorso Origine</th>
-                            <th>Data Creazione</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${entries.map(entry => `
-                            <tr>
-                                <td><strong>${entry.year || 'N/A'}</strong></td>
-                                <td>${entry.statement || 'N/A'}</td>
-                                <td><code>${entry.code || 'N/A'}</code></td>
-                                <td class="${getAmountClass(entry.amount)}">
-                                    ${formatAmount(entry.amount, entry.currency)}
-                                </td>
-                                <td>${entry.currency || 'N/A'}</td>
-                                <td><small class="text-muted">${entry.source_path || 'N/A'}</small></td>
-                                <td>${formatDate(entry.created_at)}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            container.innerHTML = table;
-        }
-        
-        // Funzioni di utilità
-        function getAmountClass(amount) {
-            if (!amount || amount === 0) return 'amount-zero';
-            return amount > 0 ? 'amount-positive' : 'amount-negative';
+            debugLog('Rendering completato');
         }
         
         function formatAmount(amount, currency = 'EUR') {
             if (!amount && amount !== 0) return 'N/A';
-            return new Intl.NumberFormat('it-IT', {
-                style: 'currency',
-                currency: currency
-            }).format(amount);
-        }
-        
-        function formatDate(dateString) {
-            if (!dateString) return 'N/A';
-            return new Date(dateString).toLocaleDateString('it-IT');
-        }
-        
-        // Funzioni per le schede del bilancio
-        function showBalanceTab(tabName) {
-            // Nasconde tutte le schede
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Rimuove la classe active da tutti i pulsanti
-            const tabButtons = document.querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Mostra la scheda selezionata
-            const selectedTab = document.getElementById(`tab-${tabName}`);
-            if (selectedTab) {
-                selectedTab.classList.add('active');
-            }
-            
-            // Attiva il pulsante corrispondente
-            const selectedButton = document.querySelector(`[onclick="showBalanceTab('${tabName}')"]`);
-            if (selectedButton) {
-                selectedButton.classList.add('active');
+            try {
+                return new Intl.NumberFormat('it-IT', {
+                    style: 'currency',
+                    currency: currency
+                }).format(amount);
+            } catch (error) {
+                return `${amount} ${currency}`;
             }
         }
         
-        function filterBalanceTable(statementType) {
-            const filter = document.getElementById(`code-filter-${statementType}`).value.toLowerCase();
-            const table = document.getElementById(`table-${statementType}`);
-            
-            if (!table) return;
-            
-            const rows = table.querySelectorAll('tbody tr');
-            
-            rows.forEach(row => {
-                const code = row.cells[1].textContent.toLowerCase();
-                const description = row.cells[2].textContent.toLowerCase();
-                
-                const match = code.includes(filter) || description.includes(filter);
-                row.style.display = match ? '' : 'none';
+        // Gestione errori globali
+        window.addEventListener('error', function(event) {
+            debugLog('Errore JavaScript globale', {
+                message: event.message,
+                filename: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                error: event.error
             });
-        }
+        });
         
-        // Carica i dati all'avvio della pagina
-        document.addEventListener('DOMContentLoaded', loadData);
+        // Carica i dati all'avvio
+        document.addEventListener('DOMContentLoaded', function() {
+            debugLog('DOM caricato, avvio loadData');
+            loadData();
+        });
+        
+        // Funzioni di utilità per debug
+        window.reloadData = loadData;
+        window.showApiData = function() {
+            console.log('📊 Dati API correnti:', window.apiData);
+        };
     </script>
 </body>
 </html>

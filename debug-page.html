@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page - Test API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .warning { background: #fff3cd; color: #856404; }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug Page - Test API</h1>
+        
+        <div class="info">
+            <h3>📋 Test disponibili:</h3>
+            <button onclick="testAPI()">Test API /api/report</button>
+            <button onclick="testBalance()">Test Bilanci Specifici</button>
+            <button onclick="clearResults()">Pulisci Risultati</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            console.log(`[${type.toUpperCase()}] ${message}`);
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${message}`;
+            results.appendChild(div);
+        }
+        
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+        
+        async function testAPI() {
+            log('🚀 Inizio test API /api/report');
+            
+            try {
+                const response = await fetch('/api/report');
+                log(`📡 Risposta ricevuta: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                // Analisi dati
+                log(`📊 Dati ricevuti con chiavi: ${Object.keys(data).join(', ')}`, 'success');
+                
+                if (data.company) {
+                    log(`🏢 Azienda trovata: ${data.company.company_name || 'Nome non disponibile'}`, 'success');
+                    log(`🆔 ID Azienda: ${data.company.azienda_id}`, 'info');
+                }
+                
+                if (data.stats) {
+                    log(`📈 Statistiche: ${data.stats.total_balance_entries} voci di bilancio totali`, 'info');
+                }
+                
+                // Controllo bilanci
+                const balanceData = data.balance || data.balance_entries;
+                if (balanceData && balanceData.length > 0) {
+                    log(`💰 Trovate ${balanceData.length} voci di bilancio`, 'success');
+                    
+                    // Mostra prime 5 voci
+                    const sample = balanceData.slice(0, 5);
+                    let tableHtml = `
+                        <div class="status info">
+                            <h4>📋 Prime 5 voci di bilancio:</h4>
+                            <table>
+                                <tr>
+                                    <th>Anno</th>
+                                    <th>Tipo</th>
+                                    <th>Codice</th>
+                                    <th>Descrizione</th>
+                                    <th>Importo</th>
+                                </tr>
+                    `;
+                    
+                    sample.forEach(entry => {
+                        tableHtml += `
+                            <tr>
+                                <td>${entry.year || 'N/A'}</td>
+                                <td>${entry.statement || 'N/A'}</td>
+                                <td>${entry.code || 'N/A'}</td>
+                                <td>${entry.description || 'N/A'}</td>
+                                <td>${formatAmount(entry.amount, entry.currency)}</td>
+                            </tr>
+                        `;
+                    });
+                    
+                    tableHtml += '</table></div>';
+                    document.getElementById('results').innerHTML += tableHtml;
+                } else {
+                    log('⚠️ Nessuna voce di bilancio trovata nei dati', 'warning');
+                }
+                
+                // Mostra JSON completo
+                const jsonDiv = document.createElement('div');
+                jsonDiv.className = 'status info';
+                jsonDiv.innerHTML = `
+                    <h4>📄 Dati JSON completi:</h4>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+                document.getElementById('results').appendChild(jsonDiv);
+                
+            } catch (error) {
+                log(`❌ Errore: ${error.message}`, 'error');
+                console.error('Errore completo:', error);
+            }
+        }
+        
+        async function testBalance() {
+            log('🔍 Test specifico per dati di bilancio');
+            
+            try {
+                // Prima ottieni l'ID azienda
+                const reportResponse = await fetch('/api/report');
+                const reportData = await reportResponse.json();
+                
+                if (!reportData.company || !reportData.company.azienda_id) {
+                    log('❌ Impossibile ottenere ID azienda', 'error');
+                    return;
+                }
+                
+                const aziendeId = reportData.company.azienda_id;
+                log(`🆔 Test con ID azienda: ${aziendeId}`, 'info');
+                
+                // Test endpoint bilanci
+                const balanceResponse = await fetch(`/api/balance-summary?azienda_id=${aziendeId}`);
+                log(`📊 Risposta bilanci: ${balanceResponse.status}`, balanceResponse.ok ? 'success' : 'error');
+                
+                if (balanceResponse.ok) {
+                    const balanceData = await balanceResponse.json();
+                    log(`💰 Riepilogo bilanci: ${balanceData.length} voci trovate`, 'success');
+                    
+                    const summaryDiv = document.createElement('div');
+                    summaryDiv.className = 'status success';
+                    summaryDiv.innerHTML = `
+                        <h4>📊 Riepilogo Bilanci:</h4>
+                        <pre>${JSON.stringify(balanceData, null, 2)}</pre>
+                    `;
+                    document.getElementById('results').appendChild(summaryDiv);
+                } else {
+                    log('❌ Errore nel recupero riepilogo bilanci', 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Errore test bilanci: ${error.message}`, 'error');
+            }
+        }
+        
+        function formatAmount(amount, currency = 'EUR') {
+            if (!amount && amount !== 0) return 'N/A';
+            try {
+                return new Intl.NumberFormat('it-IT', {
+                    style: 'currency',
+                    currency: currency
+                }).format(amount);
+            } catch (error) {
+                return `${amount} ${currency}`;
+            }
+        }
+        
+        // Auto-test all'avvio
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 Debug page caricata, eseguo test automatico...', 'info');
+            setTimeout(testAPI, 1000);
+        });
+    </script>
+</body>
+</html>

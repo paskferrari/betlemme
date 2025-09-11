@@ -1,0 +1,38 @@
+{
+  "stato_patrimoniale_attivo": [
+    {
+      "code": "IIC124",
+      "description": "Immobilizzazioni immateriali",
+      "value": 50000
+    },
+    {
+      "code": "IIC125",
+      "description": "Immobilizzazioni materiali",
+      "value": 150000
+    }
+  ],
+  "stato_patrimoniale_passivo": [
+    {
+      "code": "IIC200",
+      "description": "Capitale sociale",
+      "value": 100000
+    },
+    {
+      "code": "IIC201",
+      "description": "Riserve",
+      "value": 50000
+    }
+  ],
+  "conto_economico": [
+    {
+      "code": "IIC300",
+      "description": "Ricavi delle vendite",
+      "value": 500000
+    },
+    {
+      "code": "IIC301",
+      "description": "Costi per materie prime",
+      "value": 200000
+    }
+  ]
+}

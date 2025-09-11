@@ -1,0 +1,1619 @@
+{
+  "data": {
+    "pec": "VALDORCIA@PEC.CONFCOOPERATIVE.IT",
+    "managers": [
+      {
+        "name": "ANDREA",
+        "surname": "COSTA",
+        "roles": [
+          {
+            "role": {
+              "code": "PCA",
+              "description": "Chairman of board of directors"
+            },
+            "roleStartDate": "2025-08-12T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "CSTNDR67A01I726J",
+        "birthDate": "1967-01-01T00:00:00",
+        "age": 58,
+        "birthTown": "SIENA (SI)",
+        "isLegalRepresentative": true
+      },
+      {
+        "name": "ELIA",
+        "surname": "SARDONE",
+        "roles": [
+          {
+            "role": {
+              "code": "VPA",
+              "description": "Vice chairman board of directors"
+            },
+            "roleStartDate": "2025-08-12T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "SRDLEI89E18I726H",
+        "birthDate": "1989-05-18T00:00:00",
+        "age": 36,
+        "birthTown": "SIENA (SI)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "SALVATORE",
+        "surname": "CANU",
+        "roles": [
+          {
+            "role": {
+              "code": "CON",
+              "description": "Director"
+            },
+            "roleStartDate": "2025-08-12T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "CNASVT70C29G064D",
+        "birthDate": "1970-03-29T00:00:00",
+        "age": 55,
+        "birthTown": "ONANI (NU)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "COSTANTINO",
+        "surname": "ZIDDA",
+        "roles": [
+          {
+            "role": {
+              "code": "CON",
+              "description": "Director"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "ZDDCTN71L30L303J",
+        "birthDate": "1971-07-30T00:00:00",
+        "age": 54,
+        "birthTown": "TORRITA DI SIENA (SI)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "ANTONIO",
+        "surname": "GODDI",
+        "roles": [
+          {
+            "role": {
+              "code": "CON",
+              "description": "Director"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "GDDNTN60E13L093V",
+        "birthDate": "1960-05-13T00:00:00",
+        "age": 65,
+        "birthTown": "TEMPIO PAUSANIA (OT)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "MARIO",
+        "surname": "MARCHI",
+        "roles": [
+          {
+            "role": {
+              "code": "PCS",
+              "description": "Chairman of board of auditors"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "MRCMRA65H29A468Y",
+        "birthDate": "1965-06-29T00:00:00",
+        "age": 60,
+        "birthTown": "SINALUNGA (SI)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "GIOVANNI",
+        "surname": "SEMBOLONI",
+        "roles": [
+          {
+            "role": {
+              "code": "SIE",
+              "description": "Permanent auditor"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "SMBGNN43C23C407N",
+        "birthDate": "1943-03-23T00:00:00",
+        "age": 82,
+        "birthTown": "CAVRIGLIA (AR)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "ALESSANDRO",
+        "surname": "ROGHI",
+        "roles": [
+          {
+            "role": {
+              "code": "SIE",
+              "description": "Permanent auditor"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "RGHLSN64S20A468F",
+        "birthDate": "1964-11-20T00:00:00",
+        "age": 60,
+        "birthTown": "SINALUNGA (SI)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "CLAUDIA",
+        "surname": "CROCIANI",
+        "roles": [
+          {
+            "role": {
+              "code": "SIS",
+              "description": "Temporary auditor"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "F",
+          "description": "Woman"
+        },
+        "taxCode": "CRCCLD82L44C662Y",
+        "birthDate": "1982-07-04T00:00:00",
+        "age": 43,
+        "birthTown": "CHIUSI (SI)",
+        "isLegalRepresentative": false
+      },
+      {
+        "name": "LUIGI",
+        "surname": "MARINUCCI",
+        "roles": [
+          {
+            "role": {
+              "code": "SIS",
+              "description": "Temporary auditor"
+            },
+            "roleStartDate": "2024-05-21T00:00:00"
+          }
+        ],
+        "gender": {
+          "code": "M",
+          "description": "Man"
+        },
+        "taxCode": "MRNLGU63L23E058F",
+        "birthDate": "1963-07-23T00:00:00",
+        "age": 62,
+        "birthTown": "GIULIANOVA (TE)",
+        "isLegalRepresentative": false
+      }
+    ],
+    "affiliateCompanies": [
+      {
+        "taxCode": "01010610523",
+        "companyName": "ANTICHI COLLI SRL",
+        "percentShare": 50
+      }
+    ],
+    "rae": {
+      "code": "011",
+      "description": null
+    },
+    "sae": {
+      "code": "430",
+      "description": "Imprese produttive"
+    },
+    "adjustments": [
+      {
+        "code": "IIC163",
+        "value": 0
+      },
+      {
+        "code": "IIC162",
+        "value": 0
+      },
+      {
+        "code": "IIC164",
+        "value": 0
+      },
+      {
+        "code": "IIC246",
+        "value": 0
+      },
+      {
+        "code": "IIC245",
+        "value": 0
+      },
+      {
+        "code": "IIC350",
+        "value": 0
+      },
+      {
+        "code": "IICC351",
+        "value": 0
+      },
+      {
+        "code": "IIC167",
+        "value": 0
+      },
+      {
+        "code": "IIC168",
+        "value": 0
+      },
+      {
+        "code": "IIC166",
+        "value": 0
+      },
+      {
+        "code": "IIC165",
+        "value": 0
+      },
+      {
+        "code": "IIC169",
+        "value": 0
+      }
+    ],
+    "productionCosts": [
+      {
+        "code": "IIC134",
+        "value": 1420478
+      },
+      {
+        "code": "IIC188",
+        "value": 507817
+      },
+      {
+        "code": "IIC140",
+        "value": 88496
+      },
+      {
+        "code": "IIC141",
+        "value": 419321
+      },
+      {
+        "code": "IIC142",
+        "value": 0
+      },
+      {
+        "code": "IIC143",
+        "value": 0
+      },
+      {
+        "code": "IIC133",
+        "value": 14256
+      },
+      {
+        "code": "IIC138",
+        "value": 40902
+      },
+      {
+        "code": "IIC148",
+        "value": 276607
+      },
+      {
+        "code": "IIC147",
+        "value": 0
+      },
+      {
+        "code": "IIC137",
+        "value": 0
+      },
+      {
+        "code": "IIC131",
+        "value": 12622318
+      },
+      {
+        "code": "IIC146",
+        "value": 0
+      },
+      {
+        "code": "IIC132",
+        "value": 4085126
+      },
+      {
+        "code": "IIC136",
+        "value": 93945
+      },
+      {
+        "code": "IIC187",
+        "value": 134847
+      },
+      {
+        "code": "IIC135",
+        "value": 172961
+      },
+      {
+        "code": "IIC144",
+        "value": 507817
+      },
+      {
+        "code": "IIC139",
+        "value": 1728286
+      },
+      {
+        "code": "IIC145",
+        "value": -177688
+      }
+    ],
+    "revenuesFinancialCharges": [
+      {
+        "code": "IIC226",
+        "value": 0
+      },
+      {
+        "code": "IPL231",
+        "value": 0
+      },
+      {
+        "code": "IIC236",
+        "value": 0
+      },
+      {
+        "code": "IIC227",
+        "value": 0
+      },
+      {
+        "code": "IPL232",
+        "value": 0
+      },
+      {
+        "code": "IIC237",
+        "value": 0
+      },
+      {
+        "code": "IIC225",
+        "value": 0
+      },
+      {
+        "code": "IIC230",
+        "value": 0
+      },
+      {
+        "code": "IIC235",
+        "value": 0
+      },
+      {
+        "code": "IIC228",
+        "value": 0
+      },
+      {
+        "code": "IIC233",
+        "value": 0
+      },
+      {
+        "code": "IIC238",
+        "value": 0
+      },
+      {
+        "code": "IIC229",
+        "value": 0
+      },
+      {
+        "code": "IIC234",
+        "value": 14676
+      },
+      {
+        "code": "IIC239",
+        "value": 0
+      },
+      {
+        "code": "IIC156",
+        "value": 0
+      },
+      {
+        "code": "IIC190",
+        "value": 0
+      },
+      {
+        "code": "IIC152",
+        "value": 14676
+      },
+      {
+        "code": "IIC155",
+        "value": 0
+      },
+      {
+        "code": "IIC154",
+        "value": 0
+      },
+      {
+        "code": "IIC150",
+        "value": 0
+      },
+      {
+        "code": "IIC189",
+        "value": 0
+      },
+      {
+        "code": "IIC241",
+        "value": 0
+      },
+      {
+        "code": "IIC243",
+        "value": 0
+      },
+      {
+        "code": "IIC244",
+        "value": 449699
+      },
+      {
+        "code": "IIC242",
+        "value": 0
+      },
+      {
+        "code": "IIC240",
+        "value": 0
+      },
+      {
+        "code": "IIC159",
+        "value": 449699
+      },
+      {
+        "code": "IIC158",
+        "value": 14676
+      }
+    ],
+    "annualResult": [
+      {
+        "code": "IIC191",
+        "value": 171
+      },
+      {
+        "code": "IIC192",
+        "value": 0
+      },
+      {
+        "code": "IIC250",
+        "value": 0
+      },
+      {
+        "code": "IIC179",
+        "value": 3393
+      },
+      {
+        "code": "IIC177",
+        "value": 3564
+      },
+      {
+        "code": "IIC347",
+        "value": 0
+      },
+      {
+        "code": "IIC178",
+        "value": 171
+      }
+    ],
+    "incomeStatementAggregateValues": [
+      {
+        "code": "IIC224",
+        "value": 438587
+      },
+      {
+        "code": "IIC149",
+        "value": 19056722
+      },
+      {
+        "code": "IIC130",
+        "value": 19495310
+      },
+      {
+        "code": "IIC161",
+        "value": -435024
+      },
+      {
+        "code": "IIC170",
+        "value": 0
+      }
+    ],
+    "productionValue": [
+      {
+        "code": "IIC127",
+        "value": 0
+      },
+      {
+        "code": "IIC129",
+        "value": 30632
+      },
+      {
+        "code": "IIC223",
+        "value": 176901
+      },
+      {
+        "code": "IIC125",
+        "value": 1307248
+      },
+      {
+        "code": "IIC124",
+        "value": 17980528
+      },
+      {
+        "code": "IIC128",
+        "value": 207534
+      },
+      {
+        "code": "IIC186",
+        "value": 1307248
+      },
+      {
+        "code": "IIC126",
+        "value": 0
+      }
+    ],
+    "assetsAggregateValues": [
+      {
+        "code": "IIC072",
+        "value": 136668
+      },
+      {
+        "code": "IIC001",
+        "value": 0
+      },
+      {
+        "code": "IIC071",
+        "value": 10629935
+      },
+      {
+        "code": "IIC074",
+        "value": 14336617
+      },
+      {
+        "code": "IIC039",
+        "value": 3570013
+      }
+    ],
+    "intangibleFixedAssets": [
+      {
+        "code": "IIC008",
+        "value": 0
+      },
+      {
+        "code": "IIC007",
+        "value": 0
+      },
+      {
+        "code": "IIC009",
+        "value": 252779
+      },
+      {
+        "code": "IIC005",
+        "value": 0
+      },
+      {
+        "code": "IIC006",
+        "value": 0
+      },
+      {
+        "code": "IIC004",
+        "value": 0
+      },
+      {
+        "code": "IIC003",
+        "value": 0
+      },
+      {
+        "code": "IIC011",
+        "value": 252779
+      }
+    ],
+    "tangibleFixedAssets": [
+      {
+        "code": "IIC016",
+        "value": 0
+      },
+      {
+        "code": "IIC014",
+        "value": 370576
+      },
+      {
+        "code": "IIC012",
+        "value": 1774072
+      },
+      {
+        "code": "IIC015",
+        "value": 34538
+      },
+      {
+        "code": "IIC013",
+        "value": 1062670
+      },
+      {
+        "code": "IIC018",
+        "value": 3241856
+      }
+    ],
+    "cashEquivalents": [
+      {
+        "code": "IIC067",
+        "value": 966469
+      },
+      {
+        "code": "IIC070",
+        "value": 973239
+      },
+      {
+        "code": "IIC069",
+        "value": 6769
+      },
+      {
+        "code": "IIC068",
+        "value": 0
+      }
+    ],
+    "credits": [
+      {
+        "code": "IIC057",
+        "value": 0
+      },
+      {
+        "code": "IIC052",
+        "value": 0
+      },
+      {
+        "code": "IIC053",
+        "value": 0
+      },
+      {
+        "code": "IIC046",
+        "value": 3589228
+      },
+      {
+        "code": "IIC047",
+        "value": 0
+      },
+      {
+        "code": "IIC054",
+        "value": 32045
+      },
+      {
+        "code": "IIC055",
+        "value": 0
+      },
+      {
+        "code": "IIC050",
+        "value": 0
+      },
+      {
+        "code": "IIC051",
+        "value": 0
+      },
+      {
+        "code": "IIC048",
+        "value": 30006
+      },
+      {
+        "code": "IIC049",
+        "value": 0
+      },
+      {
+        "code": "IIC198",
+        "value": 0
+      },
+      {
+        "code": "IIC199",
+        "value": 0
+      },
+      {
+        "code": "IIC056",
+        "value": 4025382
+      },
+      {
+        "code": "IIC180",
+        "value": 374103
+      },
+      {
+        "code": "IIC181",
+        "value": 0
+      },
+      {
+        "code": "IIC324",
+        "value": 0
+      },
+      {
+        "code": "IIC321",
+        "value": 3589228
+      },
+      {
+        "code": "IIC058",
+        "value": 4025382
+      },
+      {
+        "code": "IIC325",
+        "value": 0
+      },
+      {
+        "code": "IIC326",
+        "value": 374103
+      },
+      {
+        "code": "IIC328",
+        "value": 32045
+      },
+      {
+        "code": "IIC323",
+        "value": 0
+      },
+      {
+        "code": "IIC322",
+        "value": 30006
+      },
+      {
+        "code": "IIC327",
+        "value": 0
+      }
+    ],
+    "financialFixedAssets": [
+      {
+        "code": "IIC026",
+        "value": 0
+      },
+      {
+        "code": "IIC027",
+        "value": 0
+      },
+      {
+        "code": "IIC029",
+        "value": 0
+      },
+      {
+        "code": "IIC028",
+        "value": 0
+      },
+      {
+        "code": "IIC025",
+        "value": 0
+      },
+      {
+        "code": "IIC024",
+        "value": 15454
+      },
+      {
+        "code": "IIC030",
+        "value": 0
+      },
+      {
+        "code": "IIC031",
+        "value": 0
+      },
+      {
+        "code": "IIC197",
+        "value": 0
+      },
+      {
+        "code": "IIC194",
+        "value": 0
+      },
+      {
+        "code": "IIC033",
+        "value": 0
+      },
+      {
+        "code": "IIC035",
+        "value": 0
+      },
+      {
+        "code": "IIC020",
+        "value": 0
+      },
+      {
+        "code": "IIC022",
+        "value": 49924
+      },
+      {
+        "code": "IIC021",
+        "value": 0
+      },
+      {
+        "code": "IIC019",
+        "value": 10000
+      },
+      {
+        "code": "IIC195",
+        "value": 0
+      },
+      {
+        "code": "IIC196",
+        "value": 0
+      },
+      {
+        "code": "IIC032",
+        "value": 15454
+      },
+      {
+        "code": "IIC317",
+        "value": 0
+      },
+      {
+        "code": "IIC318",
+        "value": 0
+      },
+      {
+        "code": "IIC316",
+        "value": 15454
+      },
+      {
+        "code": "IIC034",
+        "value": 15454
+      },
+      {
+        "code": "IIC320",
+        "value": 0
+      },
+      {
+        "code": "IIC038",
+        "value": 75378
+      },
+      {
+        "code": "IIC023",
+        "value": 59924
+      },
+      {
+        "code": "IIC319",
+        "value": 0
+      }
+    ],
+    "creditsToShareholders": [
+      {
+        "code": "IIC002",
+        "value": 0
+      },
+      {
+        "code": "IIC193",
+        "value": 0
+      }
+    ],
+    "financialAssets": [
+      {
+        "code": "IIC201",
+        "value": 0
+      },
+      {
+        "code": "IIC202",
+        "value": 0
+      },
+      {
+        "code": "IIC200",
+        "value": 0
+      },
+      {
+        "code": "IIC062",
+        "value": 0
+      },
+      {
+        "code": "IIC065",
+        "value": 0
+      },
+      {
+        "code": "IIC060",
+        "value": 0
+      },
+      {
+        "code": "IIC059",
+        "value": 0
+      },
+      {
+        "code": "IIC061",
+        "value": 0
+      },
+      {
+        "code": "IIC066",
+        "value": 0
+      }
+    ],
+    "inventory": [
+      {
+        "code": "IIC043",
+        "value": 0
+      },
+      {
+        "code": "IIC044",
+        "value": 0
+      },
+      {
+        "code": "IIC040",
+        "value": 278436
+      },
+      {
+        "code": "IIC041",
+        "value": 5352879
+      },
+      {
+        "code": "IIC349",
+        "value": 0
+      },
+      {
+        "code": "IIC045",
+        "value": 5631315
+      },
+      {
+        "code": "IIC042",
+        "value": 0
+      }
+    ],
+    "debts": [
+      {
+        "code": "IIC099",
+        "value": 0
+      },
+      {
+        "code": "IIC098",
+        "value": 0
+      },
+      {
+        "code": "IIC091",
+        "value": 0
+      },
+      {
+        "code": "IIC090",
+        "value": 0
+      },
+      {
+        "code": "IIC092",
+        "value": 0
+      },
+      {
+        "code": "IIC093",
+        "value": 0
+      },
+      {
+        "code": "IIC103",
+        "value": 0
+      },
+      {
+        "code": "IIC102",
+        "value": 0
+      },
+      {
+        "code": "IIC117",
+        "value": 7459816
+      },
+      {
+        "code": "IIC097",
+        "value": 0
+      },
+      {
+        "code": "IIC107",
+        "value": 0
+      },
+      {
+        "code": "IIC112",
+        "value": 103977
+      },
+      {
+        "code": "IIC113",
+        "value": 0
+      },
+      {
+        "code": "IIC109",
+        "value": 0
+      },
+      {
+        "code": "IIC105",
+        "value": 0
+      },
+      {
+        "code": "IIC220",
+        "value": 0
+      },
+      {
+        "code": "IIC221",
+        "value": 0
+      },
+      {
+        "code": "IIC106",
+        "value": 0
+      },
+      {
+        "code": "IIC094",
+        "value": 1362727
+      },
+      {
+        "code": "IIC095",
+        "value": 7459816
+      },
+      {
+        "code": "IIC096",
+        "value": 0
+      },
+      {
+        "code": "IIC108",
+        "value": 0
+      },
+      {
+        "code": "IIC185",
+        "value": 0
+      },
+      {
+        "code": "IIC184",
+        "value": 0
+      },
+      {
+        "code": "IIC104",
+        "value": 0
+      },
+      {
+        "code": "IIC101",
+        "value": 0
+      },
+      {
+        "code": "IIC100",
+        "value": 1961171
+      },
+      {
+        "code": "IIC114",
+        "value": 711971
+      },
+      {
+        "code": "IIC115",
+        "value": 0
+      },
+      {
+        "code": "IIC116",
+        "value": 4207831
+      },
+      {
+        "code": "IIC110",
+        "value": 67985
+      },
+      {
+        "code": "IIC111",
+        "value": 0
+      },
+      {
+        "code": "IIC334",
+        "value": 0
+      },
+      {
+        "code": "IIC329",
+        "value": 0
+      },
+      {
+        "code": "IIC333",
+        "value": 0
+      },
+      {
+        "code": "IIC338",
+        "value": 0
+      },
+      {
+        "code": "IIC337",
+        "value": 0
+      },
+      {
+        "code": "IIC330",
+        "value": 0
+      },
+      {
+        "code": "IIC336",
+        "value": 0
+      },
+      {
+        "code": "IIC342",
+        "value": 103977
+      },
+      {
+        "code": "IIC340",
+        "value": 0
+      },
+      {
+        "code": "IIC339",
+        "value": 0
+      },
+      {
+        "code": "IIC331",
+        "value": 0
+      },
+      {
+        "code": "IIC332",
+        "value": 8822543
+      },
+      {
+        "code": "IIC343",
+        "value": 711971
+      },
+      {
+        "code": "IIC341",
+        "value": 67985
+      },
+      {
+        "code": "IIC335",
+        "value": 1961171
+      }
+    ],
+    "liabilitiesAggregateValues": [
+      {
+        "code": "IIC119",
+        "value": 200000
+      },
+      {
+        "code": "IIC089",
+        "value": 600431
+      },
+      {
+        "code": "IIC118",
+        "value": 11667647
+      },
+      {
+        "code": "IIC121",
+        "value": 14336617
+      },
+      {
+        "code": "IIC084",
+        "value": 1838218
+      },
+      {
+        "code": "IIC088",
+        "value": 30321
+      }
+    ],
+    "netWorth": [
+      {
+        "code": "IIC211",
+        "value": 0
+      },
+      {
+        "code": "IIC207",
+        "value": 0
+      },
+      {
+        "code": "IIC209",
+        "value": 0
+      },
+      {
+        "code": "IIC210",
+        "value": 0
+      },
+      {
+        "code": "IIC208",
+        "value": 0
+      },
+      {
+        "code": "IIC203",
+        "value": 0
+      },
+      {
+        "code": "IIC206",
+        "value": 0
+      },
+      {
+        "code": "IIC078",
+        "value": 979416
+      },
+      {
+        "code": "IIC212",
+        "value": 0
+      },
+      {
+        "code": "IIC216",
+        "value": 0
+      },
+      {
+        "code": "IIC214",
+        "value": 160101
+      },
+      {
+        "code": "IIC218",
+        "value": 0
+      },
+      {
+        "code": "IIC081",
+        "value": 160101
+      },
+      {
+        "code": "IIC082",
+        "value": 0
+      },
+      {
+        "code": "IIC083",
+        "value": 3393
+      },
+      {
+        "code": "IIC345",
+        "value": 0
+      },
+      {
+        "code": "IIC204",
+        "value": 0
+      },
+      {
+        "code": "IIC213",
+        "value": 0
+      },
+      {
+        "code": "IIC215",
+        "value": 0
+      },
+      {
+        "code": "IIC077",
+        "value": 0
+      },
+      {
+        "code": "IIC075",
+        "value": 695309
+      },
+      {
+        "code": "IIC076",
+        "value": 0
+      },
+      {
+        "code": "IIC205",
+        "value": 0
+      },
+      {
+        "code": "IIC080",
+        "value": 0
+      }
+    ],
+    "riskProvisions": [
+      {
+        "code": "IIC087",
+        "value": 30321
+      },
+      {
+        "code": "IIC219",
+        "value": 0
+      },
+      {
+        "code": "IIC085",
+        "value": 0
+      },
+      {
+        "code": "IIC086",
+        "value": 0
+      }
+    ],
+    "companyDetails": {
+      "vatCode": "00054490529",
+      "taxCode": "00054490529",
+      "lastUpdateDate": "2025-08-29T18:06:42.0698056Z",
+      "cciaa": "SI",
+      "reaCode": "48151",
+      "companyName": "SOC COOP VAL D'ORCIA SOCIETA' AGRICOLA",
+      "officeType": {
+        "code": "SSL",
+        "description": "Administrative headquarter and registered office"
+      },
+      "leiCode": "815600070C45A2C11290",
+      "openapiNumber": "IT2E85050ES0001"
+    },
+    "legalForm": {
+      "legalForm": {
+        "code": "SC",
+        "description": "Joint stock business"
+      },
+      "detailedLegalForm": {
+        "code": "SC",
+        "description": "Mutual company limited by shares"
+      }
+    },
+    "companyStatus": {
+      "activityStatus": {
+        "code": "A",
+        "description": "Enable"
+      }
+    },
+    "companyDates": {
+      "registrationDate": "1996-02-19T00:00:00",
+      "startDate": "1964-12-18T00:00:00",
+      "incorporationDate": "1964-12-18T00:00:00"
+    },
+    "address": {
+      "streetName": "VIA DELL'ORCIA, 15",
+      "hamlet": "CONTIGNANO",
+      "zipCode": "53040",
+      "town": "RADICOFANI",
+      "province": {
+        "code": "SI",
+        "description": "SIENA"
+      },
+      "region": {
+        "code": "09",
+        "description": "TUSCANY"
+      },
+      "country": {
+        "code": "IT",
+        "description": "Italia"
+      }
+    },
+    "marketable": {
+      "isMarketable": true
+    },
+    "branches": {
+      "numberOfBranches": 0
+    },
+    "atecoClassification": {
+      "ateco": {
+        "code": "01631",
+        "description": "Post-harvest crop activities"
+      },
+      "secondaryAteco": "",
+      "ateco2022": {
+        "code": "0163",
+        "description": "Post harvest activities"
+      },
+      "secondaryAteco2022": ""
+    },
+    "internationalClassification": {
+      "nace": {
+        "code": "0163",
+        "description": "Post-harvest crop activities"
+      },
+      "primarySic": {
+        "code": "0723",
+        "description": "Crop preparation services"
+      },
+      "secondarySic": ""
+    },
+    "ecofin": {
+      "balanceSheetDate": "2024-12-31T00:00:00",
+      "turnoverRange": {
+        "code": "TR9",
+        "description": "10000000 - 49999999"
+      },
+      "turnoverYear": 2024,
+      "turnover": 17980528,
+      "turnoverTrend": -3.28,
+      "shareCapital": 695309,
+      "netWorth": 1838218,
+      "enterpriseSize": {
+        "code": "MEDIUM",
+        "description": "Medium enterprise"
+      }
+    },
+    "employees": {
+      "employeeRange": {
+        "code": "ER6",
+        "description": "50 - 99"
+      },
+      "employee": 57,
+      "employeeTrend": 16.33
+    },
+    "employeesStatistic": {
+      "permanentContract": 100,
+      "partialTimeContract": 17,
+      "fullTimeContract": 83,
+      "whiteCollar": 100
+    },
+    "innovativeSmeAndSu": {
+      "isInnovativeStartUp": false,
+      "isInnovativeSme": false
+    },
+    "mail": {
+      "email": "direzione@caseificiovaldorcia.com"
+    },
+    "contacts": {
+      "fax": "057852085"
+    },
+    "webAndSocial": {
+      "website": "www.caseificiovaldorcia.it",
+      "hasSocial": true,
+      "facebook": "https://www.facebook.com/caseificiovaldorcia",
+      "instagram": "https://www.instagram.com/caseificiovaldorcia/"
+    },
+    "foreignTrade": {
+      "isImporter": false,
+      "isExporter": true,
+      "exportPercentShare": 12,
+      "exportCountries": "UNIONE EUROPEA, ALTRI PAESI"
+    },
+    "corporateGroups": {
+      "belongsToGroup": false,
+      "nationalParentCompany": {
+        "province": {
+          "code": "ND99",
+          "description": "N. A."
+        }
+      },
+      "hasForeignSubsidiaries": false,
+      "hasForeignParents": false
+    },
+    "artisanBusinessRegistry": {
+      "belongsToArtisanBusinessRegistry": false
+    },
+    "soaCertification": {
+      "hasSoaCertification": false
+    },
+    "financialCycle": {
+      "accountsReceivableDuration": 67.1992,
+      "stockDuration": 105.432,
+      "debtsToSuppliersDuration": 42.8083,
+      "financialCycleDuration": 129.8229
+    },
+    "coverageRatios": {
+      "ebitdaNetInterestCoverage": 2.1755,
+      "ffoNetInterestCoverage": 2.321,
+      "ebitNetInterestCoverage": 1.0082,
+      "ebitdaGrossInterestCoverage": 2.1045,
+      "ebitGrossInterestCoverage": 0.9753
+    },
+    "efficiency": {
+      "turnoverIndex": 1.3598,
+      "inventoryRotation": 3.462,
+      "currentAssetsRotation": 1.8107,
+      "accountsReceivableRotation": 5.4316
+    },
+    "leverageRatios": {
+      "pfnEbitda": 8.2938,
+      "ebitdaNetLeverage": 8.2938,
+      "ffoNetLeverage": 8.0777,
+      "ebitdaGrossLeverage": 9.3222
+    },
+    "liquidityRatios": {
+      "cashShortTermFinancialDebt": 0.7142,
+      "cashShortTermBankDebt": 0.7142,
+      "cashTotalShortTermDebt": 0.2313,
+      "fcfShortTermFinancialDebt": -1.3712
+    },
+    "profitability": {
+      "ros": 2.25,
+      "roe": 0.19,
+      "incidenceOfExtraFeaturesManagement": 0.77,
+      "roi": 3.06,
+      "roaMonetary": 3.57
+    },
+    "financialBurden": {
+      "rod": 3.85,
+      "rodFinanziario": 5.1,
+      "burdenIndex": 47.52
+    },
+    "indebtedness": {
+      "bankDebtTotalAssets": 0.6154,
+      "capitalizationDegree": 0.1282,
+      "leverage": 7.7992,
+      "bankDebtRatio": 4.7995,
+      "debtRatio": 6.3473
+    },
+    "financialStability": {
+      "secondaryMarginStructure ": 5728021,
+      "marginStructure": 0.5149,
+      "fixedAssetsCoverageRate": 2.6045,
+      "marginStructureIndex": -1731795,
+      "workingCapitalCoverage": 0.3262,
+      "acidTest": 1.165,
+      "currentRatio": 2.4426
+    },
+    "structureRatios": {
+      "netFinancialDebtEquityNetWorth": 4.2701,
+      "pfnNetWorth": 4.2701,
+      "financialDebtComposition": 0.1545,
+      "netDebtTotalSources": 0.8103,
+      "grossFinancialDebtNetWorth": 4.7995
+    },
+    "development": {
+      "ebitVariation": 0.2985,
+      "grossFinancialDebt": 0.3152,
+      "totalAssets": 12.19,
+      "mol": 8.52,
+      "addedValue": 2.89,
+      "productionValue": 5.22
+    },
+    "operatingResults": {
+      "ebitda": 946405,
+      "ebitdaL2Y": 872101,
+      "ebit": 438588,
+      "ebitL2Y": 337770,
+      "cashFlow": 511210,
+      "cashFlowL2Y": 540103
+    },
+    "financialStatementKpi": {
+      "totalInventoryTurnover": 112.752,
+      "debtsTurnover": 0.6489
+    },
+    "allOffices": [
+      {
+        "companyDetails": {
+          "vatCode": "00054490529",
+          "taxCode": "00054490529",
+          "lastUpdateDate": "2025-08-29T18:06:42.0698056Z",
+          "cciaa": "SI",
+          "reaCode": "48151",
+          "companyName": "SOC COOP VAL D'ORCIA SOCIETA' AGRICOLA",
+          "officeType": {
+            "code": "SSL",
+            "description": "Administrative headquarter and registered office"
+          },
+          "leiCode": "815600070C45A2C11290",
+          "openapiNumber": "IT2E85050ES0001"
+        },
+        "companyStatus": {
+          "activityStatus": {
+            "code": "A",
+            "description": "Enable"
+          }
+        },
+        "address": {
+          "streetName": "VIA DELL'ORCIA, 15",
+          "hamlet": "CONTIGNANO",
+          "zipCode": "53040",
+          "town": "RADICOFANI",
+          "province": {
+            "code": "SI",
+            "description": "SIENA"
+          },
+          "region": {
+            "code": "09",
+            "description": "TUSCANY"
+          },
+          "country": {
+            "code": "IT",
+            "description": "Italia"
+          }
+        }
+      },
+      {
+        "companyDetails": {
+          "vatCode": "00054490529",
+          "taxCode": "00054490529",
+          "lastUpdateDate": "2025-08-29T18:06:42.0698056Z",
+          "companyName": "SOC COOP VAL D'ORCIA SOCIETA' AGRICOLA",
+          "officeType": {
+            "code": "UL",
+            "description": "Local units"
+          },
+          "leiCode": "815600070C45A2C11290",
+          "openapiNumber": "IT2E85050EU8000"
+        },
+        "companyStatus": {
+          "activityStatus": {
+            "code": "CF",
+            "description": "Out of business (in a positive way)"
+          }
+        },
+        "address": {
+          "streetName": "VIA CASSIA, KM 134 400 SNC",
+          "zipCode": "01021",
+          "town": "ACQUAPENDENTE",
+          "province": {
+            "code": "VT",
+            "description": "VITERBO"
+          },
+          "region": {
+            "code": "12",
+            "description": "LAZIO"
+          },
+          "country": {
+            "code": "IT",
+            "description": "Italia"
+          }
+        }
+      }
+    ]
+  },
+  "success": true,
+  "message": "",
+  "error": null
+}

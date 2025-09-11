@@ -64,8 +64,12 @@ function inferPgType(value) {
   return 'text';
 }
 function computeAziendaId(payload) {
-  const vat = safeGet(payload, ['companyDetails', 'vatCode']) || payload.vatCode;
-  const tax = safeGet(payload, ['companyDetails', 'taxCode']) || payload.taxCode;
+  const vat = safeGet(payload, ['companyDetails', 'vatCode']) || 
+              safeGet(payload, ['data', 'companyDetails', 'vatCode']) || 
+              payload.vatCode || payload?.data?.vatCode;
+  const tax = safeGet(payload, ['companyDetails', 'taxCode']) || 
+              safeGet(payload, ['data', 'companyDetails', 'taxCode']) || 
+              payload.taxCode || payload?.data?.taxCode;
   const base = vat || tax;
   return base ? uuidv5(String(base).trim(), NS) : uuidv4();
 }
@@ -198,8 +202,20 @@ function extractBalanceEntries(payload) {
   // I dati sono dentro payload.data, non direttamente in payload
   const data = payload?.data || payload;
   
-  // Mapping completo per tutte le sezioni di bilancio del JSON euromar
+  // Mapping allineato con la struttura degli schemi di bilancio
   const sectionMappings = [
+    // Stato Patrimoniale - Attivo
+    { section: 'stato_patrimoniale_attivo', statement: 'SP_A', description: 'Stato Patrimoniale Attivo' },
+    
+    // Stato Patrimoniale - Passivo
+    { section: 'stato_patrimoniale_passivo', statement: 'SP_P', description: 'Stato Patrimoniale Passivo' },
+    
+    // Conto Economico
+    { section: 'conto_economico', statement: 'CE', description: 'Conto Economico' }
+  ];
+  
+  // Mapping di fallback per il formato euromar (mantenuto per compatibilità)
+  const euromarSectionMappings = [
     // Stato Patrimoniale - Attivo
     { section: 'assetsAggregateValues', statement: 'SP_A', description: 'Aggregati Attivo' },
     { section: 'intangibleFixedAssets', statement: 'SP_A', description: 'Immobilizzazioni Immateriali' },
@@ -220,52 +236,15 @@ function extractBalanceEntries(payload) {
     { section: 'extraordinaryIncomeAndCharges', statement: 'CE', description: 'Proventi e Oneri Straordinari' }
   ];
   
-  // Mapping per le descrizioni dei codici (basato sui pattern comuni)
-  const codeDescriptions = {
-    // Codici Stato Patrimoniale Attivo
-    'IIC001': 'Costi di impianto e di ampliamento',
-    'IIC011': 'Diritti di brevetto industriale',
-    'IIC018': 'Impianti e macchinario',
-    'IIC039': 'Crediti verso clienti',
-    'IIC046': 'Crediti verso clienti entro 12 mesi',
-    'IIC067': 'Depositi bancari e postali',
-    'IIC068': 'Assegni',
-    'IIC069': 'Denaro e valori in cassa',
-    'IIC070': 'Totale disponibilità liquide',
-    'IIC071': 'Totale attivo circolante',
-    'IIC072': 'Totale immobilizzazioni',
-    'IIC074': 'Totale attivo',
-    
-    // Codici Stato Patrimoniale Passivo
-    'IIC078': 'Capitale',
-    'IIC084': 'Totale patrimonio netto',
-    'IIC088': 'Fondi per rischi e oneri',
-    'IIC089': 'Trattamento di fine rapporto',
-    'IIC118': 'Debiti',
-    'IIC119': 'Ratei e risconti passivi',
-    'IIC121': 'Totale passivo',
-    
-    // Codici Conto Economico
-    'IIC124': 'Ricavi delle vendite e delle prestazioni',
-    'IIC125': 'Variazioni delle rimanenze',
-    'IIC126': 'Variazioni dei lavori in corso',
-    'IIC127': 'Incrementi di immobilizzazioni',
-    'IIC128': 'Altri ricavi e proventi',
-    'IIC129': 'Totale altri ricavi e proventi',
-    'IIC130': 'Totale valore della produzione',
-    'IIC149': 'Totale costi della produzione',
-    'IIC161': 'Proventi e oneri finanziari',
-    'IIC170': 'Proventi e oneri straordinari',
-    'IIC224': 'Risultato prima delle imposte'
-  };
+  // Le descrizioni dei codici sono ora gestite dalla tabella legend_codes nel database
   
-  // Processa tutte le sezioni disponibili
+  // Processa prima le sezioni degli schemi di bilancio
   for (const mapping of sectionMappings) {
     const section = data?.[mapping.section];
     if (Array.isArray(section)) {
       for (const item of section) {
         if (item.code && (item.value !== undefined || item.amount !== undefined)) {
-          const description = codeDescriptions[item.code] || `${mapping.description} - ${item.code}`;
+          const description = `${mapping.description} - ${item.code}`;
           entries.push({
             year: defaultYear,
             statement: mapping.statement,
@@ -280,6 +259,29 @@ function extractBalanceEntries(payload) {
     }
   }
   
+  // Se non abbiamo trovato dati, prova con il formato euromar
+  if (entries.length === 0) {
+    for (const mapping of euromarSectionMappings) {
+      const section = data?.[mapping.section];
+      if (Array.isArray(section)) {
+        for (const item of section) {
+          if (item.code && (item.value !== undefined || item.amount !== undefined)) {
+            const description = `${mapping.description} - ${item.code}`;
+            entries.push({
+              year: defaultYear,
+              statement: mapping.statement,
+              code: item.code,
+              description: description,
+              amount: item.value ?? item.amount,
+              currency: defaultCurrency,
+              source_path: mapping.section
+            });
+          }
+        }
+      }
+    }
+  }
+  
   // Se non abbiamo trovato dati nelle sezioni note, usa il fallback
   if (entries.length === 0) {
     // ultra-fallback: scandisci tutto il JSON e cerca coppie codice/valore
@@ -288,7 +290,7 @@ function extractBalanceEntries(payload) {
       for (const [k,v] of Object.entries(node)) {
         if (CODE_RE.test(k) && (typeof v === 'number' || typeof v === 'string')) {
           const yearGuess = (''+path.join('.')).match(/20\d{2}/)?.[0]; // estrae un anno se presente nel path
-          const description = codeDescriptions[k] || `Voce di bilancio - ${k}`;
+          const description = `Voce di bilancio - ${k}`;
           entries.push({
             year: yearGuess ? Number(yearGuess) : defaultYear,
             statement: k.startsWith('IPL') ? 'SP_P' : (k.startsWith('IIC1') ? 'CE' : 'SP_A'),
@@ -310,17 +312,20 @@ function extractBalanceEntries(payload) {
 /** --------- Upsert per sezioni --------- */
 async function upsertCompany(payload) {
   const azienda_id = computeAziendaId(payload);
-  const details = payload.companyDetails || {};
+  // Cerca i dati aziendali sia a livello root che dentro data
+  const details = payload.companyDetails || payload?.data?.companyDetails || {};
+  const data = payload?.data || payload;
+  
   const row = {
     azienda_id,
-    vat_code: details.vatCode || payload.vatCode || null,
-    tax_code: details.taxCode || payload.taxCode || null,
-    company_name: details.companyName || payload.companyName || null,
-    legal_form: payload?.legalForm?.description || details.legalForm || null,
-    status: payload?.companyStatus?.description || null,
-    cciaa: payload?.chamberOfCommerce?.code || details.cciaa || null,
-    rea_code: details.reaCode || null,
-    country_code: payload?.address?.country?.code || null
+    vat_code: details.vatCode || payload.vatCode || data.vatCode || null,
+    tax_code: details.taxCode || payload.taxCode || data.taxCode || null,
+    company_name: details.companyName || payload.companyName || data.companyName || null,
+    legal_form: payload?.legalForm?.description || data?.legalForm?.description || details.legalForm || null,
+    status: payload?.companyStatus?.description || data?.companyStatus?.description || null,
+    cciaa: payload?.chamberOfCommerce?.code || data?.chamberOfCommerce?.code || details.cciaa || null,
+    rea_code: details.reaCode || data.reaCode || null,
+    country_code: payload?.address?.country?.code || data?.address?.country?.code || null
   };
   await upsert('companies', [row], 'azienda_id');
   return azienda_id;

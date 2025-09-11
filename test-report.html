@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test Report - Debug</h1>
+        
+        <div id="loading" class="loading">
+            ⏳ Caricamento dati in corso...
+        </div>
+        
+        <div id="content" style="display: none;">
+            <!-- Il contenuto verrà inserito qui -->
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('content');
+            
+            console.log('🚀 Inizio caricamento dati...');
+            
+            try {
+                console.log('📡 Chiamata API in corso...');
+                const response = await fetch('/api/report');
+                
+                console.log('📊 Risposta ricevuta:', response.status, response.statusText);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('✅ Dati ricevuti:', data);
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                renderReport(data);
+                
+            } catch (error) {
+                console.error('❌ Errore nel caricamento:', error);
+                content.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Errore nel caricamento dei dati</h3>
+                        <p><strong>Errore:</strong> ${error.message}</p>
+                        <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+                        <p>Controlla la console del browser per maggiori dettagli.</p>
+                    </div>
+                `;
+            } finally {
+                loading.style.display = 'none';
+                content.style.display = 'block';
+            }
+        }
+        
+        function renderReport(data) {
+            const content = document.getElementById('content');
+            
+            let html = `
+                <div class="success">
+                    <h3>✅ Dati caricati con successo!</h3>
+                    <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+                </div>
+            `;
+            
+            // Informazioni azienda
+            if (data.company) {
+                html += `
+                    <h2>🏢 Informazioni Azienda</h2>
+                    <table>
+                        <tr><th>Campo</th><th>Valore</th></tr>
+                        <tr><td>ID Azienda</td><td>${data.company.azienda_id || 'N/A'}</td></tr>
+                        <tr><td>Ragione Sociale</td><td>${data.company.company_name || 'N/A'}</td></tr>
+                        <tr><td>Partita IVA</td><td>${data.company.vat_code || 'N/A'}</td></tr>
+                        <tr><td>Codice Fiscale</td><td>${data.company.tax_code || 'N/A'}</td></tr>
+                    </table>
+                `;
+            }
+            
+            // Statistiche
+            if (data.stats) {
+                html += `
+                    <h2>📊 Statistiche</h2>
+                    <table>
+                        <tr><th>Metrica</th><th>Valore</th></tr>
+                        <tr><td>Totale Aziende</td><td>${data.stats.total_companies || 0}</td></tr>
+                        <tr><td>Totale Voci Bilancio</td><td>${data.stats.total_balance_entries || 0}</td></tr>
+                        <tr><td>Totale Contatti</td><td>${data.stats.total_contacts || 0}</td></tr>
+                        <tr><td>Totale Indirizzi</td><td>${data.stats.total_addresses || 0}</td></tr>
+                    </table>
+                `;
+            }
+            
+            // Bilanci (solo primi 10 per test)
+            if (data.balance && data.balance.length > 0) {
+                html += `
+                    <h2>💰 Voci di Bilancio (prime 10)</h2>
+                    <table>
+                        <tr>
+                            <th>Anno</th>
+                            <th>Tipo</th>
+                            <th>Codice</th>
+                            <th>Descrizione</th>
+                            <th>Importo</th>
+                        </tr>
+                `;
+                
+                data.balance.slice(0, 10).forEach(entry => {
+                    html += `
+                        <tr>
+                            <td>${entry.year || 'N/A'}</td>
+                            <td>${entry.statement || 'N/A'}</td>
+                            <td>${entry.code || 'N/A'}</td>
+                            <td>${entry.description || 'N/A'}</td>
+                            <td>${formatAmount(entry.amount, entry.currency)}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `</table>`;
+                
+                if (data.balance.length > 10) {
+                    html += `<p><em>... e altre ${data.balance.length - 10} voci</em></p>`;
+                }
+            }
+            
+            content.innerHTML = html;
+        }
+        
+        function formatAmount(amount, currency = 'EUR') {
+            if (!amount && amount !== 0) return 'N/A';
+            return new Intl.NumberFormat('it-IT', {
+                style: 'currency',
+                currency: currency
+            }).format(amount);
+        }
+        
+        // Carica i dati all'avvio
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>

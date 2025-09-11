@@ -1,0 +1,712 @@
+{
+  "stato_patrimoniale_attivo": [
+    {
+      "code": "IIC203",
+      "description": "Riserva straordinaria (***)"
+    },
+    {
+      "code": "IIC204",
+      "description": "Riserva da deroghe ex articolo 2423 codice civile (***)"
+    },
+    {
+      "code": "IIC205",
+      "description": "Riserva azioni (quote) della società controllante (***)"
+    },
+    {
+      "code": "IIC206",
+      "description": "Riserva da rivalutazione delle partecipazioni (***)"
+    },
+    {
+      "code": "IIC207",
+      "description": "Versamenti in conto aumento di capitale (***)"
+    },
+    {
+      "code": "IIC208",
+      "description": "Versamenti in conto futuro aumento di capitale (***)"
+    },
+    {
+      "code": "IIC209",
+      "description": "Versamenti in conto capitale (***)"
+    },
+    {
+      "code": "IIC210",
+      "description": "Versamenti a copertura perdite (***)"
+    },
+    {
+      "code": "IIC211",
+      "description": "Riserva da riduzione capitale sociale (***)"
+    },
+    {
+      "code": "IIC212",
+      "description": "Riserva avanzo di fusione (***)"
+    },
+    {
+      "code": "IIC213",
+      "description": "Riserva per utili su cambi non realizzati (***)"
+    },
+    {
+      "code": "IIC345",
+      "description": "Riserva da conguaglio utili in corso (***)"
+    },
+    {
+      "code": "IIC214",
+      "description": "Varie altre riserve (***)"
+    },
+    {
+      "code": "IIC215",
+      "description": "A.VII. Riserva per operazioni di copertura dei flussi finanziari attesi (***)"
+    },
+    {
+      "code": "IIC216",
+      "description": "Perdita ripianata nell'esercizio (***)"
+    },
+    {
+      "code": "IIC218",
+      "description": "A.X. Riserva negativa per azioni proprie in portafoglio (***)"
+    },
+    {
+      "code": "IIC219",
+      "description": "B.3. Strumenti finanziari derivati passivi (***)"
+    },
+    {
+      "code": "IIC329",
+      "description": "D.1. Totale Obbligazioni (***)"
+    },
+    {
+      "code": "IIC330",
+      "description": "D.2. Totale Obbligazioni convertibili (***)"
+    },
+    {
+      "code": "IIC331",
+      "description": "D.3. Totale Debiti verso soci per finanziamenti (***)"
+    },
+    {
+      "code": "IIC332",
+      "description": "D.4. Totale Debiti verso banche (***)"
+    },
+    {
+      "code": "IIC333",
+      "description": "D.5. Totale Debiti verso altri finanziatori (***)"
+    },
+    {
+      "code": "IIC334",
+      "description": "D.6. Totale Acconti/anticipi (***)"
+    },
+    {
+      "code": "IIC335",
+      "description": "D.7. Totale Debiti verso fornitori (***)"
+    },
+    {
+      "code": "IIC336",
+      "description": "D.8. Totale Titoli di credito (***)"
+    },
+    {
+      "code": "IIC337",
+      "description": "D.9. Totale Debiti verso controllate (***)"
+    },
+    {
+      "code": "IIC338",
+      "description": "D.10. Totale Debiti verso collegate (***)"
+    },
+    {
+      "code": "IIC339",
+      "description": "D.11. Totale Debiti verso controllanti(***)"
+    },
+    {
+      "code": "IIC220",
+      "description": "D.11.bis Debiti verso Sottoposte al controllo delle controllanti esigibili a breve (***)"
+    },
+    {
+      "code": "IIC221",
+      "description": "D.11.bis Debiti verso Sottoposte al controllo delle controllanti esigibili oltre l’esercizio successivo (***)"
+    },
+    {
+      "code": "IIC340",
+      "description": "D.11.bis Totale Debiti verso Sottoposte al controllo delle controllanti (***)"
+    },
+    {
+      "code": "IIC341",
+      "description": "D.12. Totale Debiti tributari (***)"
+    },
+    {
+      "code": "IIC342",
+      "description": "D.13. Totale Debiti verso istituti di previdenza (***)"
+    },
+    {
+      "code": "IIC343",
+      "description": "D.14. Totale Altri debiti (***)"
+    }
+  ],
+  "stato_patrimoniale_passivo": [
+    {
+      "code": "IIC084",
+      "description": "A. TOTALE PATRIMONIO NETTO"
+    },
+    {
+      "code": "IIC075",
+      "description": "A.I. Capitale sociale"
+    },
+    {
+      "code": "IIC076",
+      "description": "A.II. Riserva da sovrapprezzo"
+    },
+    {
+      "code": "IIC077",
+      "description": "A.III. Riserva di rivalutazione"
+    },
+    {
+      "code": "IIC078",
+      "description": "A.IV. Riserva legale"
+    },
+    {
+      "code": "IIC080",
+      "description": "A.V. Riserva statutaria"
+    },
+    {
+      "code": "IIC079",
+      "description": "A.VI. Riserva azioni proprie (**)"
+    },
+    {
+      "code": "IIC081",
+      "description": "A.VI. Totale altre riserve (*)"
+    },
+    {
+      "code": "IIC082",
+      "description": "A.VIII. Utile/perdita a nuovo"
+    },
+    {
+      "code": "IIC083",
+      "description": "A.IX. Utile/perdita di esercizio"
+    },
+    {
+      "code": "IIC088",
+      "description": "B. TOTALE FONDI RISCHI"
+    },
+    {
+      "code": "IIC085",
+      "description": "B.1. Fondo di quiescenza"
+    },
+    {
+      "code": "IIC086",
+      "description": "B.2. Fondo imposte anche differite"
+    },
+    {
+      "code": "IIC087",
+      "description": "B.4. Altri Fondi (*)"
+    },
+    {
+      "code": "IIC089",
+      "description": "C. TRATTAMENTO FINE RAPPORTO DI LAVORO SUBORDINATO"
+    },
+    {
+      "code": "IIC118",
+      "description": "D. TOTALE DEBITI"
+    },
+    {
+      "code": "IIC090",
+      "description": "D.1. Obbligazioni esigibili a breve"
+    },
+    {
+      "code": "IIC091",
+      "description": "D.1. Obbligazioni esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC092",
+      "description": "D.2. Obbligazioni convertibili esigibili a breve"
+    },
+    {
+      "code": "IIC093",
+      "description": "D.2. Obbligazioni convertibili esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC184",
+      "description": "D.3. Debiti verso soci per finanziamenti esigibili a breve"
+    },
+    {
+      "code": "IIC185",
+      "description": "D.3. Debiti verso soci per finanziamenti esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC094",
+      "description": "D.4. Debiti verso banche esigibili a breve"
+    },
+    {
+      "code": "IIC095",
+      "description": "D.4. Debiti verso banche esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC096",
+      "description": "D.5. Debiti verso altri finanziatori esigibili a breve"
+    },
+    {
+      "code": "IIC097",
+      "description": "D.5. Debiti verso altri finanziatori esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC098",
+      "description": "D.6. Acconti/anticipi esigibili a breve"
+    },
+    {
+      "code": "IIC099",
+      "description": "D.6. Acconti/anticipi esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC100",
+      "description": "D.7. Debiti verso fornitori esigibili a breve"
+    },
+    {
+      "code": "IIC101",
+      "description": "D.7. Debiti verso fornitori esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC102",
+      "description": "D.8. Titoli di credito esigibili a breve"
+    },
+    {
+      "code": "IIC103",
+      "description": "D.8. Titoli di credito esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC104",
+      "description": "D.9. Debiti verso controllate esigibili a breve"
+    },
+    {
+      "code": "IIC105",
+      "description": "D.9. Debiti verso controllate esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC106",
+      "description": "D.10. Debiti verso collegate esigibili a breve"
+    },
+    {
+      "code": "IIC107",
+      "description": "D.10. Debiti verso collegate esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC108",
+      "description": "D.11. Debiti verso controllanti esigibili a breve"
+    },
+    {
+      "code": "IIC109",
+      "description": "D.11. Debiti verso controllanti esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC110",
+      "description": "D.12. Debiti tributari esigibili a breve"
+    },
+    {
+      "code": "IIC111",
+      "description": "D.12. Debiti tributari esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC112",
+      "description": "D.13. Debiti verso istituti di previdenza esigibili a breve"
+    },
+    {
+      "code": "IIC113",
+      "description": "D.13. Debiti verso istituti di previdenza esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC114",
+      "description": "D.14. Altri debiti esigibili a breve"
+    },
+    {
+      "code": "IIC115",
+      "description": "D.14. Altri debiti esigibili oltre l'esercizio successivo"
+    },
+    {
+      "code": "IIC116",
+      "description": "DEBITI ESIGIBILI A BREVE"
+    },
+    {
+      "code": "IIC117",
+      "description": "DEBITI ESIGIBILI OLTRE L'ESERCIZIO SUCCESSIVO"
+    },
+    {
+      "code": "IIC119",
+      "description": "E. RATEI E RISCONTI"
+    },
+    {
+      "code": "IIC120",
+      "description": "RATEI E RISCONTI di cui aggio su prestiti (**)"
+    },
+    {
+      "code": "IIC121",
+      "description": "TOTALE PASSIVO"
+    },
+    {
+      "code": "IIC122",
+      "description": "TOTALE CONTI D'ORDINE (**)"
+    },
+    {
+      "code": "IIC123",
+      "description": "CONTI D'ORDINE di cui garanzie prestate (**)"
+    }
+  ],
+  "conto_economico": [
+    {
+      "code": "IIC130",
+      "description": "A. TOTALE VALORE DELLA PRODUZIONE"
+    },
+    {
+      "code": "IIC124",
+      "description": "A.1. Ricavi vendite e prestazioni"
+    },
+    {
+      "code": "IIC125",
+      "description": "A.2. Variazione rimanenze prodotti"
+    },
+    {
+      "code": "IIC126",
+      "description": "A.3. Variazione lavori"
+    },
+    {
+      "code": "IIC186",
+      "description": "A.2+A.3 Totale Variazioni"
+    },
+    {
+      "code": "IIC127",
+      "description": "A.4. Incrementi di immobilizzazioni"
+    },
+    {
+      "code": "IIC128",
+      "description": "A.5. Totale Altri ricavi (*)"
+    },
+    {
+      "code": "IIC129",
+      "description": "Contributi in conto esercizio (*)"
+    },
+    {
+      "code": "IIC223",
+      "description": "Altri ricavi (***)"
+    },
+    {
+      "code": "IIC149",
+      "description": "B. COSTI DELLA PRODUZIONE"
+    },
+    {
+      "code": "IIC131",
+      "description": "B.6. Acquisti di materie"
+    },
+    {
+      "code": "IIC132",
+      "description": "B.7. Servizi"
+    },
+    {
+      "code": "IIC133",
+      "description": "B.8. Godimento beni di terzi"
+    },
+    {
+      "code": "IIC139",
+      "description": "B.9. Totale Spese Personale"
+    },
+    {
+      "code": "IIC134",
+      "description": "B.9.a) Salari/stipendi"
+    },
+    {
+      "code": "IIC135",
+      "description": "B.9.b) Oneri sociali"
+    },
+    {
+      "code": "IIC136",
+      "description": "B.9.c) Trattamento fine rapporto"
+    },
+    {
+      "code": "IIC137",
+      "description": "B.9.d) Quiescenza"
+    },
+    {
+      "code": "IIC138",
+      "description": "B.9.e) Altri costi"
+    },
+    {
+      "code": "IIC187",
+      "description": "B.9.c.d.e Costi generali del personale"
+    },
+    {
+      "code": "IIC144",
+      "description": "B.10. Totale Ammortamenti e Svalutazioni"
+    },
+    {
+      "code": "IIC140",
+      "description": "B.10.a) Ammortamenti immateriali"
+    },
+    {
+      "code": "IIC141",
+      "description": "B.10.b) Ammortamenti materiali"
+    },
+    {
+      "code": "IIC142",
+      "description": "B.10.c) Altre svalutazioni delle immobilizzazioni"
+    },
+    {
+      "code": "IIC188",
+      "description": "B.10.a.b.c Ammortamenti e svalutazioni delle immobilizzazioni"
+    },
+    {
+      "code": "IIC143",
+      "description": "B.10.d) Svalutazione crediti attivo circolante e disponibilità liquide"
+    },
+    {
+      "code": "IIC145",
+      "description": "B.11. Variazione materie"
+    },
+    {
+      "code": "IIC146",
+      "description": "B.12. Accantonamenti per rischi"
+    },
+    {
+      "code": "IIC147",
+      "description": "B.13. Altri accantonamenti"
+    },
+    {
+      "code": "IIC148",
+      "description": "B.14. Oneri diversi di gestione"
+    },
+    {
+      "code": "IIC224",
+      "description": "DIFFERENZA TRA VALORE E COSTI DELLA PRODUZIONE (A - B) (***)"
+    },
+    {
+      "code": "IIC161",
+      "description": "C. TOTALE PROVENTI E ONERI FINANZIARI"
+    },
+    {
+      "code": "IIC150",
+      "description": "C.15. Totale Proventi da partecipazioni (*)"
+    },
+    {
+      "code": "IIC151",
+      "description": "di cui in controllate/collegate (**)"
+    },
+    {
+      "code": "IIC225",
+      "description": "C.15 da imprese controllate (***)"
+    },
+    {
+      "code": "IIC226",
+      "description": "C.15 da imprese collegate (***)"
+    },
+    {
+      "code": "IIC227",
+      "description": "C.15 da imprese controllanti (***)"
+    },
+    {
+      "code": "IIC228",
+      "description": "C.15 da imprese sottoposte al controllo delle controllanti (***)"
+    },
+    {
+      "code": "IIC229",
+      "description": "C.15 altri (***)"
+    },
+    {
+      "code": "IIC158",
+      "description": "C.16. Totale Altri Proventi"
+    },
+    {
+      "code": "IIC152",
+      "description": "C.16.a) Totale Proventi da crediti immobilizzazioni finanziarie (*)"
+    },
+    {
+      "code": "IIC153",
+      "description": "di cui in controllate/collegate (**)"
+    },
+    {
+      "code": "IIC230",
+      "description": "C.16.a) da imprese controllate (***)"
+    },
+    {
+      "code": "IPL231",
+      "description": "C.16.a) da imprese collegate (***)"
+    },
+    {
+      "code": "IPL232",
+      "description": "C.16.a) da imprese controllanti (***)"
+    },
+    {
+      "code": "IIC233",
+      "description": "C.16.a) da imprese sottoposte al controllo delle controllanti (***)"
+    },
+    {
+      "code": "IIC234",
+      "description": "C.16.a) altri (***)"
+    },
+    {
+      "code": "IIC154",
+      "description": "C.16.b) Proventi da titoli immobilizzati"
+    },
+    {
+      "code": "IIC155",
+      "description": "C.16.c) Proventi da titoli circolante"
+    },
+    {
+      "code": "IIC189",
+      "description": "C.16.b.c Proventi da titoli"
+    },
+    {
+      "code": "IIC156",
+      "description": "C.16.d) Totale Proventi diversi dai precedenti (*)"
+    },
+    {
+      "code": "IIC157",
+      "description": "di cui in controllate/ collegate/ controllanti (**)"
+    },
+    {
+      "code": "IIC235",
+      "description": "C.16.d) da imprese controllate (***)"
+    },
+    {
+      "code": "IIC236",
+      "description": "C.16.d) da imprese collegate (***)"
+    },
+    {
+      "code": "IIC237",
+      "description": "C.16.d) da imprese controllanti (***)"
+    },
+    {
+      "code": "IIC238",
+      "description": "C.16.d) da imprese sottoposte al controllo delle controllanti (***)"
+    },
+    {
+      "code": "IIC239",
+      "description": "C.16.d) altri (***)"
+    },
+    {
+      "code": "IIC159",
+      "description": "C.17. Totale Oneri finanziari"
+    },
+    {
+      "code": "IIC160",
+      "description": "di cui da controllate/collegate (**)"
+    },
+    {
+      "code": "IIC240",
+      "description": "C.17 verso imprese controllate (***)"
+    },
+    {
+      "code": "IIC241",
+      "description": "C.17 verso imprese collegate (***)"
+    },
+    {
+      "code": "IIC242",
+      "description": "C.17 verso imprese controllanti (***)"
+    },
+    {
+      "code": "IIC243",
+      "description": "C.17 verso imprese sottoposte al controllo delle controllanti (***)"
+    },
+    {
+      "code": "IIC244",
+      "description": "C.17 verso altri (***)"
+    },
+    {
+      "code": "IIC190",
+      "description": "C.17.bis Utili e perdite su cambi"
+    },
+    {
+      "code": "IIC170",
+      "description": "D. TOTALE RETTIFICHE ATTIVITÀ E PASSIVITÀ FINANZIARIE (*)"
+    },
+    {
+      "code": "IIC165",
+      "description": "D.18. Totale Rivalutazioni"
+    },
+    {
+      "code": "IIC162",
+      "description": "D.18.a) Rivalutazioni di partecipazioni"
+    },
+    {
+      "code": "IIC163",
+      "description": "D.18.b) Rivalutazioni di altre immobilizzazioni finanziarie"
+    },
+    {
+      "code": "IIC164",
+      "description": "D.18.c) Rivalutazioni di titoli"
+    },
+    {
+      "code": "IIC245",
+      "description": "D.18.d) Strumenti finanziari derivati (***)"
+    },
+    {
+      "code": "IIC350",
+      "description": "di attività finanziarie per la gestione accentrata della tesoreria (***)"
+    },
+    {
+      "code": "IIC169",
+      "description": "D.19. Totale Svalutazioni"
+    },
+    {
+      "code": "IIC166",
+      "description": "D.19.a) Svalutazioni di partecipazioni"
+    },
+    {
+      "code": "IIC167",
+      "description": "D.19.b) Svalutazioni di altre immobilizzazioni finanziarie"
+    },
+    {
+      "code": "IIC168",
+      "description": "D.19.c) Svalutazioni di titoli"
+    },
+    {
+      "code": "IIC246",
+      "description": "D.19.d) Strumenti finanziari derivati (***)"
+    },
+    {
+      "code": "IICC351",
+      "description": "di attività finanziarie per la gestione accentrata della tesoreria (***)"
+    },
+    {
+      "code": "IIC176",
+      "description": "E. TOTALE PROVENTI/ONERI STRAORDINARI (**)"
+    },
+    {
+      "code": "IIC171",
+      "description": "E.20. Proventi straordinari (**)"
+    },
+    {
+      "code": "IIC172",
+      "description": "di cui plusvalenze (**)"
+    },
+    {
+      "code": "IIC173",
+      "description": "E.21. Oneri straordinari (**)"
+    },
+    {
+      "code": "IIC175",
+      "description": "di cui minusvalenze (**)"
+    },
+    {
+      "code": "IIC174",
+      "description": "di cui imposte esercizio precedente (**)"
+    },
+    {
+      "code": "IIC177",
+      "description": "RISULTATO PRIMA DELLE IMPOSTE"
+    },
+    {
+      "code": "IIC178",
+      "description": "20. Totale Imposte sul Reddito Correnti, Differite e Anticipate (*)"
+    },
+    {
+      "code": "IIC191",
+      "description": "a) Imposte correnti (*)"
+    },
+    {
+      "code": "IIC347",
+      "description": "b) Imposte relative a esercizi precedenti (***)"
+    },
+    {
+      "code": "IIC192",
+      "description": "c) Imposte differite e anticipate (*)"
+    },
+    {
+      "code": "IIC250",
+      "description": "d) Proventi (oneri) da adesione al regime di consolidato fiscale / trasparenza fiscale (***)"
+    },
+    {
+      "code": "IIC179",
+      "description": "21. UTILE/PERDITA DI ESERCIZIO (*)"
+    }
+  ]
+}
